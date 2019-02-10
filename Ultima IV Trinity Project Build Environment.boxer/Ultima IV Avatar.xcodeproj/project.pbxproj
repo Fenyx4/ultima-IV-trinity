@@ -17,13 +17,13 @@
 		8884AB0320C37A180012C494 /* U4_COMBC.C in Sources */ = {isa = PBXBuildFile; fileRef = 8884AAD420C37A180012C494 /* U4_COMBC.C */; };
 		8884AB0420C37A180012C494 /* U4_CSTES.C in Sources */ = {isa = PBXBuildFile; fileRef = 8884AAD520C37A180012C494 /* U4_CSTES.C */; };
 		8884AB0520C37A180012C494 /* U4_DNG.C in Sources */ = {isa = PBXBuildFile; fileRef = 8884AAD620C37A180012C494 /* U4_DNG.C */; };
-		8884AB0620C37A180012C494 /* U4_DOS.ASM in Sources */ = {isa = PBXBuildFile; fileRef = 8884AAD720C37A180012C494 /* U4_DOS.ASM */; };
+		8884AB0620C37A180012C494 /* U4_DOS.ASM in Frameworks */ = {isa = PBXBuildFile; fileRef = 8884AAD720C37A180012C494 /* U4_DOS.ASM */; };
 		8884AB0720C37A180012C494 /* U4_END.C in Sources */ = {isa = PBXBuildFile; fileRef = 8884AAD920C37A180012C494 /* U4_END.C */; };
 		8884AB0820C37A180012C494 /* U4_EVT.C in Sources */ = {isa = PBXBuildFile; fileRef = 8884AADA20C37A180012C494 /* U4_EVT.C */; };
 		8884AB0920C37A180012C494 /* U4_EXPLO.C in Sources */ = {isa = PBXBuildFile; fileRef = 8884AADB20C37A180012C494 /* U4_EXPLO.C */; };
 		8884AB0A20C37A180012C494 /* U4_FILE.C in Sources */ = {isa = PBXBuildFile; fileRef = 8884AADC20C37A180012C494 /* U4_FILE.C */; };
 		8884AB0B20C37A180012C494 /* U4_GET.C in Sources */ = {isa = PBXBuildFile; fileRef = 8884AADE20C37A180012C494 /* U4_GET.C */; };
-		8884AB0C20C37A180012C494 /* U4_GRAPH.ASM in Sources */ = {isa = PBXBuildFile; fileRef = 8884AADF20C37A180012C494 /* U4_GRAPH.ASM */; };
+		8884AB0C20C37A180012C494 /* U4_GRAPH.ASM in Frameworks */ = {isa = PBXBuildFile; fileRef = 8884AADF20C37A180012C494 /* U4_GRAPH.ASM */; };
 		8884AB0D20C37A180012C494 /* U4_HOLE.C in Sources */ = {isa = PBXBuildFile; fileRef = 8884AAE120C37A180012C494 /* U4_HOLE.C */; };
 		8884AB0E20C37A180012C494 /* U4_INIT.C in Sources */ = {isa = PBXBuildFile; fileRef = 8884AAE220C37A180012C494 /* U4_INIT.C */; };
 		8884AB0F20C37A180012C494 /* U4_LB.C in Sources */ = {isa = PBXBuildFile; fileRef = 8884AAE320C37A180012C494 /* U4_LB.C */; };
@@ -36,16 +36,16 @@
 		8884AB1720C37A180012C494 /* U4_Q_N_V.C in Sources */ = {isa = PBXBuildFile; fileRef = 8884AAEC20C37A180012C494 /* U4_Q_N_V.C */; };
 		8884AB1820C37A180012C494 /* U4_SHOPS.C in Sources */ = {isa = PBXBuildFile; fileRef = 8884AAEF20C37A180012C494 /* U4_SHOPS.C */; };
 		8884AB1920C37A180012C494 /* U4_SHRIN.C in Sources */ = {isa = PBXBuildFile; fileRef = 8884AAF020C37A180012C494 /* U4_SHRIN.C */; };
-		8884AB1A20C37A180012C494 /* U4_SOUND.ASM in Sources */ = {isa = PBXBuildFile; fileRef = 8884AAF120C37A180012C494 /* U4_SOUND.ASM */; };
+		8884AB1A20C37A180012C494 /* U4_SOUND.ASM in Frameworks */ = {isa = PBXBuildFile; fileRef = 8884AAF120C37A180012C494 /* U4_SOUND.ASM */; };
 		8884AB1B20C37A180012C494 /* U4_SPELL.C in Sources */ = {isa = PBXBuildFile; fileRef = 8884AAF220C37A180012C494 /* U4_SPELL.C */; };
 		8884AB1C20C37A180012C494 /* U4_SRCH.C in Sources */ = {isa = PBXBuildFile; fileRef = 8884AAF320C37A180012C494 /* U4_SRCH.C */; };
 		8884AB1D20C37A180012C494 /* U4_SRCH2.C in Sources */ = {isa = PBXBuildFile; fileRef = 8884AAF420C37A180012C494 /* U4_SRCH2.C */; };
 		8884AB1E20C37A180012C494 /* U4_TALK.C in Sources */ = {isa = PBXBuildFile; fileRef = 8884AAF520C37A180012C494 /* U4_TALK.C */; };
 		8884AB1F20C37A180012C494 /* U4_USE.C in Sources */ = {isa = PBXBuildFile; fileRef = 8884AAF620C37A180012C494 /* U4_USE.C */; };
 		8884AB2020C37A180012C494 /* U4_UTIL.C in Sources */ = {isa = PBXBuildFile; fileRef = 8884AAF720C37A180012C494 /* U4_UTIL.C */; };
-		8884AB2120C37A180012C494 /* U4_VAR.ASM in Sources */ = {isa = PBXBuildFile; fileRef = 8884AAF820C37A180012C494 /* U4_VAR.ASM */; };
+		8884AB2120C37A180012C494 /* U4_VAR.ASM in Frameworks */ = {isa = PBXBuildFile; fileRef = 8884AAF820C37A180012C494 /* U4_VAR.ASM */; };
 		8884AB2220C37A180012C494 /* U4_Z.C in Sources */ = {isa = PBXBuildFile; fileRef = 8884AAF920C37A180012C494 /* U4_Z.C */; };
-		8884AB2320C37A180012C494 /* UTIL2.ASM in Sources */ = {isa = PBXBuildFile; fileRef = 8884AAFB20C37A180012C494 /* UTIL2.ASM */; };
+		8884AB2320C37A180012C494 /* UTIL2.ASM in Frameworks */ = {isa = PBXBuildFile; fileRef = 8884AAFB20C37A180012C494 /* UTIL2.ASM */; };
 		8885653C2127E61000CF5D79 /* U4_NPC.C in Sources */ = {isa = PBXBuildFile; fileRef = 8885653B2127E61000CF5D79 /* U4_NPC.C */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +116,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8884AB2320C37A180012C494 /* UTIL2.ASM in Frameworks */,
+				8884AB1A20C37A180012C494 /* U4_SOUND.ASM in Frameworks */,
+				8884AB0620C37A180012C494 /* U4_DOS.ASM in Frameworks */,
+				8884AB2120C37A180012C494 /* U4_VAR.ASM in Frameworks */,
+				8884AB0C20C37A180012C494 /* U4_GRAPH.ASM in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,9 +200,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		88F6C1F920B9A252003DBBEA /* Ultima IV Title */ = {
+		88F6C1F920B9A252003DBBEA /* Avatar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88F6C20120B9A252003DBBEA /* Build configuration list for PBXNativeTarget "Ultima IV Title" */;
+			buildConfigurationList = 88F6C20120B9A252003DBBEA /* Build configuration list for PBXNativeTarget "Avatar" */;
 			buildPhases = (
 				88F6C1F620B9A252003DBBEA /* Sources */,
 				88F6C1F720B9A252003DBBEA /* Frameworks */,
@@ -207,7 +212,7 @@
 			);
 			dependencies = (
 			);
-			name = "Ultima IV Title";
+			name = Avatar;
 			productName = "Ultima IV Title";
 			productReference = 88F6C1FA20B9A252003DBBEA /* Ultima IV Title */;
 			productType = "com.apple.product-type.tool";
@@ -238,7 +243,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				88F6C1F920B9A252003DBBEA /* Ultima IV Title */,
+				88F6C1F920B9A252003DBBEA /* Avatar */,
 			);
 		};
 /* End PBXProject section */
@@ -257,8 +262,6 @@
 				8884AB0B20C37A180012C494 /* U4_GET.C in Sources */,
 				8884AAFE20C37A180012C494 /* U4_3D.C in Sources */,
 				8884AB0E20C37A180012C494 /* U4_INIT.C in Sources */,
-				8884AB1A20C37A180012C494 /* U4_SOUND.ASM in Sources */,
-				8884AB2120C37A180012C494 /* U4_VAR.ASM in Sources */,
 				8884AB0420C37A180012C494 /* U4_CSTES.C in Sources */,
 				8884AB1120C37A180012C494 /* U4_MAIN.C in Sources */,
 				8884AB1620C37A180012C494 /* U4_PEER.C in Sources */,
@@ -277,15 +280,12 @@
 				8884AB0120C37A180012C494 /* U4_COMBA.C in Sources */,
 				8884AB2220C37A180012C494 /* U4_Z.C in Sources */,
 				8884AB1920C37A180012C494 /* U4_SHRIN.C in Sources */,
-				8884AB0620C37A180012C494 /* U4_DOS.ASM in Sources */,
 				8884AAFD20C37A180012C494 /* LOW.ASM in Sources */,
 				8884AB1D20C37A180012C494 /* U4_SRCH2.C in Sources */,
 				8884AB0020C37A180012C494 /* U4_ANIM.C in Sources */,
-				8884AB2320C37A180012C494 /* UTIL2.ASM in Sources */,
 				8884AAFF20C37A180012C494 /* U4_AI.C in Sources */,
 				8884AAFC20C37A180012C494 /* ERRMSG.C in Sources */,
 				8884AB0520C37A180012C494 /* U4_DNG.C in Sources */,
-				8884AB0C20C37A180012C494 /* U4_GRAPH.ASM in Sources */,
 				8884AB0320C37A180012C494 /* U4_COMBC.C in Sources */,
 				8884AB1320C37A180012C494 /* U4_MAP.C in Sources */,
 			);
@@ -394,7 +394,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		88F6C20120B9A252003DBBEA /* Build configuration list for PBXNativeTarget "Ultima IV Title" */ = {
+		88F6C20120B9A252003DBBEA /* Build configuration list for PBXNativeTarget "Avatar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				88F6C20220B9A252003DBBEA /* Debug */,

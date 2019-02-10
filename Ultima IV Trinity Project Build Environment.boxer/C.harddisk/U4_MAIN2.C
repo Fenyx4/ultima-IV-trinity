@@ -30,6 +30,104 @@ unsigned char D_0814[] = {0xE0,0x60,0x26,0x32,0xA6,0x68,0x17,0xBB};
 unsigned char D_081C[] = {0x85,0x66,0xE0,0x25,0x13,0xC2,0x7E,0xA7};
 
 char *Second_Floor[] = {
+    
+    /*Basements*/
+    /*Castles*/
+    /*0x56 0x6B*/"LCB_B.ULT",
+    /*D_06CC*/"LYCAEUMB.ULT",
+    /*D_06D8*/"EMPATHB.ULT",
+    /*D_06E3*/"SERPENTB.ULT",
+    /*Townes*/
+    /*D_06EF*/"MOONGLOB.ULT",
+    /*D_06FC*/"BRITAINB.ULT",
+    /*D_0708*/"JHELOMB.ULT",
+    /*D_0713*/"YEWB.ULT",
+    /*D_071B*/"MINOCB.ULT",
+    /*D_0725*/"TRINSICB.ULT",
+    /*D_0731*/"SKARAB.ULT",
+    /*D_073B*/"MAGINCIB.ULT",
+    /*Villages*/
+    /*D_0748*/"PAWS.ULT",
+    /*D_0751*/"DEN.ULT",
+    /*0xC9 0x3B*/"VESPER.ULT",
+    /*0x88 0x5A*/"COVE.ULT",
+    
+    /*0xF0 0x49*/"D",
+    /*D_07A8*/"D",
+    /*D_07B4*/"D",
+    /*D_07C0*/"W",
+    /*D_07CA*/"C",
+    /*D_07D7*/"S",
+    /*D_07E1*/"H",
+    /*D_07EE*/"A",
+    /*Shrines*/
+    /*D_076D*/"B",
+    /*D_0772*/"Y",
+    /*D_0779*/"R",
+    /*D_077D*/"G",
+    /*D_0783*/"O",
+    /*D_078A*/"P",
+    /*D_0791*/"W",
+    /*D_0797*/"B",
+    /*Camps*/
+    /*0x2E 0x5D*/"RIVERCAB.ULT",
+    /*0x79 0x3A*/"FORESTCB.ULT",
+    /*0x9A 0x41*/"MOUNTCAB.ULT",
+    /*0xD9 0x34*/"SWAMPCAB.ULT",
+    /*0x51 0xB7*/"PLAINSCB.ULT",
+    /*0x30 0x9E*/"VALLEYCB.ULT",
+    /*0x51 0xB7*/"FARMCAB.ULT",
+    /*0x30 0x9E*/"RANCHCAB.ULT",
+    
+    /*Ground Floor*/
+    /*Castles*/
+    /*0x56 0x6B*/"LCB_1.ULT",
+    /*D_06CC*/"LYCAEUM.ULT",
+    /*D_06D8*/"EMPATH.ULT",
+    /*D_06E3*/"SERPENT.ULT",
+    /*Townes*/
+    /*D_06EF*/"MOONGLOW.ULT",
+    /*D_06FC*/"BRITAIN.ULT",
+    /*D_0708*/"JHELOM.ULT",
+    /*D_0713*/"YEW.ULT",
+    /*D_071B*/"MINOC.ULT",
+    /*D_0725*/"TRINSIC.ULT",
+    /*D_0731*/"SKARA.ULT",
+    /*D_073B*/"MAGINCIA.ULT",
+    /*Villages*/
+    /*D_0748*/"PAWS.ULT",
+    /*D_0751*/"DEN.ULT",
+    /*0xC9 0x3B*/"VESPER.ULT",
+    /*0x88 0x5A*/"COVE.ULT",
+    
+    /*0xF0 0x49*/"D",
+    /*D_07A8*/"D",
+    /*D_07B4*/"D",
+    /*D_07C0*/"W",
+    /*D_07CA*/"C",
+    /*D_07D7*/"S",
+    /*D_07E1*/"H",
+    /*D_07EE*/"A",
+    /*Shrines*/
+    /*D_076D*/"B",
+    /*D_0772*/"Y",
+    /*D_0779*/"R",
+    /*D_077D*/"G",
+    /*D_0783*/"O",
+    /*D_078A*/"P",
+    /*D_0791*/"W",
+    /*D_0797*/"B",
+    /*Camps*/
+    /*0x2E 0x5D*/"RIVERCA1.ULT",
+    /*0x79 0x3A*/"FORESTC1.ULT",
+    /*0x9A 0x41*/"MOUNTCA1.ULT",
+    /*0xD9 0x34*/"SWAMPCA1.ULT",
+    /*0x51 0xB7*/"PLAINSC1.ULT",
+    /*0x30 0x9E*/"VALLEYC1.ULT",
+    /*0x51 0xB7*/"FARMCA1.ULT",
+    /*0x30 0x9E*/"RANCHCA1.ULT",
+    
+    /*2nd Floor*/
     /*Castles*/
     /*0x56 0x6B*/"LCB_2.ULT",
     /*D_06CC*/"LYCAEUM2.ULT",
@@ -43,24 +141,135 @@ char *Second_Floor[] = {
     /*D_071B*/"MINOC2.ULT",
     /*D_0725*/"TRINSIC2.ULT",
     /*D_0731*/"SKARA2.ULT",
-    /*D_073B*/"MAGINCI2.ULT"
-};
-
-char *Basement_Floor[] = {
+    /*D_073B*/"MAGINCI2.ULT",
+    /*Villages*/
+    /*D_0748*/"PAWS.ULT",
+    /*D_0751*/"DEN.ULT",
+    /*0xC9 0x3B*/"VESPER.ULT",
+    /*0x88 0x5A*/"COVE.ULT",
+    
+    /*0xF0 0x49*/"D",
+    /*D_07A8*/"D",
+    /*D_07B4*/"D",
+    /*D_07C0*/"W",
+    /*D_07CA*/"C",
+    /*D_07D7*/"S",
+    /*D_07E1*/"H",
+    /*D_07EE*/"A",
+    /*Shrines*/
+    /*D_076D*/"B",
+    /*D_0772*/"Y",
+    /*D_0779*/"R",
+    /*D_077D*/"G",
+    /*D_0783*/"O",
+    /*D_078A*/"P",
+    /*D_0791*/"W",
+    /*D_0797*/"B",
+    /*Camps*/
+    /*0x2E 0x5D*/"RIVERCA2.ULT",
+    /*0x79 0x3A*/"FORESTC2.ULT",
+    /*0x9A 0x41*/"MOUNTCA2.ULT",
+    /*0xD9 0x34*/"SWAMPCA2.ULT",
+    /*0x51 0xB7*/"PLAINSC2.ULT",
+    /*0x30 0x9E*/"VALLEYC2.ULT",
+    /*0x51 0xB7*/"FARMCA2.ULT",
+    /*0x30 0x9E*/"RANCHCA2.ULT",
+    
+    /*3rd Floor*/
     /*Castles*/
-    /*0x56 0x6B*/"LCB_B.ULT",
-    /*D_06CC*/"LYCAEUMB.ULT",
-    /*D_06D8*/"EMPATHB.ULT",
-    /*D_06E3*/"SERPENTB.ULT",
+    /*0x56 0x6B*/"LCB_3.ULT",
+    /*D_06CC*/"LYCAEUM3.ULT",
+    /*D_06D8*/"EMPATH3.ULT",
+    /*D_06E3*/"SERPENT3.ULT",
     /*Townes*/
-    /*D_06EF*/"MOONGLOB.ULT",
-    /*D_06FC*/"BRITAINB.ULT",
-    /*D_0708*/"JHELOMB.ULT",
-    /*D_0713*/"YEWB.ULT",
-    /*D_071B*/"MINOCB.ULT",
-    /*D_0725*/"TRINSIC2.ULT",
-    /*D_0731*/"SKARA2.ULT",
-    /*D_073B*/"MAGINCI2.ULT"
+    /*D_06EF*/"MOONGLO3.ULT",
+    /*D_06FC*/"BRITAIN3.ULT",
+    /*D_0708*/"JHELOM3.ULT",
+    /*D_0713*/"YEW3.ULT",
+    /*D_071B*/"MINOC3.ULT",
+    /*D_0725*/"TRINSIC3.ULT",
+    /*D_0731*/"SKARA3.ULT",
+    /*D_073B*/"MAGINCI3.ULT",
+    /*Villages*/
+    /*D_0748*/"PAWS.ULT",
+    /*D_0751*/"DEN.ULT",
+    /*0xC9 0x3B*/"VESPER.ULT",
+    /*0x88 0x5A*/"COVE.ULT",
+    
+    /*0xF0 0x49*/"D",
+    /*D_07A8*/"D",
+    /*D_07B4*/"D",
+    /*D_07C0*/"W",
+    /*D_07CA*/"C",
+    /*D_07D7*/"S",
+    /*D_07E1*/"H",
+    /*D_07EE*/"A",
+    /*Shrines*/
+    /*D_076D*/"B",
+    /*D_0772*/"Y",
+    /*D_0779*/"R",
+    /*D_077D*/"G",
+    /*D_0783*/"O",
+    /*D_078A*/"P",
+    /*D_0791*/"W",
+    /*D_0797*/"B",
+    /*Camps*/
+    /*0x2E 0x5D*/"RIVERCA3.ULT",
+    /*0x79 0x3A*/"FORESTC3.ULT",
+    /*0x9A 0x41*/"MOUNTCA3.ULT",
+    /*0xD9 0x34*/"SWAMPCA3.ULT",
+    /*0x51 0xB7*/"PLAINSC3.ULT",
+    /*0x30 0x9E*/"VALLEYC3.ULT",
+    /*0x51 0xB7*/"FARMCA3.ULT",
+    /*0x30 0x9E*/"RANCHCA3.ULT",
+    
+    /*4th Floor*/
+    /*Castles*/
+    /*0x56 0x6B*/"LCB_4.ULT",
+    /*D_06CC*/"LYCAEUM4.ULT",
+    /*D_06D8*/"EMPATH4.ULT",
+    /*D_06E3*/"SERPENT4.ULT",
+    /*Townes*/
+    /*D_06EF*/"MOONGLO4.ULT",
+    /*D_06FC*/"BRITAIN4.ULT",
+    /*D_0708*/"JHELOM4.ULT",
+    /*D_0713*/"YEW4.ULT",
+    /*D_071B*/"MINOC4.ULT",
+    /*D_0725*/"TRINSIC4.ULT",
+    /*D_0731*/"SKARA4.ULT",
+    /*D_073B*/"MAGINCI4.ULT",
+    /*Villages*/
+    /*D_0748*/"PAWS.ULT",
+    /*D_0751*/"DEN.ULT",
+    /*0xC9 0x3B*/"VESPER.ULT",
+    /*0x88 0x5A*/"COVE.ULT",
+    
+    /*0xF0 0x49*/"D",
+    /*D_07A8*/"D",
+    /*D_07B4*/"D",
+    /*D_07C0*/"W",
+    /*D_07CA*/"C",
+    /*D_07D7*/"S",
+    /*D_07E1*/"H",
+    /*D_07EE*/"A",
+    /*Shrines*/
+    /*D_076D*/"B",
+    /*D_0772*/"Y",
+    /*D_0779*/"R",
+    /*D_077D*/"G",
+    /*D_0783*/"O",
+    /*D_078A*/"P",
+    /*D_0791*/"W",
+    /*D_0797*/"B",
+    /*Camps*/
+    /*0x2E 0x5D*/"RIVERCA4.ULT",
+    /*0x79 0x3A*/"FORESTC4.ULT",
+    /*0x9A 0x41*/"MOUNTCA4.ULT",
+    /*0xD9 0x34*/"SWAMPCA4.ULT",
+    /*0x51 0xB7*/"PLAINSC4.ULT",
+    /*0x30 0x9E*/"VALLEYC4.ULT",
+    /*0x51 0xB7*/"FARMCA4.ULT",
+    /*0x30 0x9E*/"RANCHCA4.ULT"
 };
 
 /*towns/castles files*/
@@ -107,7 +316,7 @@ char *Towne_Castle_Village[] = {
     /*0x79 0x3A*/"FORESTCA.ULT",
     /*0x9A 0x41*/"MOUNTCA.ULT",
     /*0xD9 0x34*/"SWAMPCA.ULT",
-    /*0x51 0xB7*/"PLAINSCA.ULT",
+    /*0x51 0xB7*/"PLAINSC1.ULT",
     /*0x30 0x9E*/"VALLEYCA.ULT",
     /*0x51 0xB7*/"FARMCA.ULT",
     /*0x30 0x9E*/"RANCHCA.ULT",

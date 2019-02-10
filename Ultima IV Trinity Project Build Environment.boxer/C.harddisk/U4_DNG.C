@@ -105,7 +105,11 @@ C_8743()
 		(tile_cur & 0xf0) == 0xD0 ||
 		(tile_cur & 0xf0) == 0xF0
 	) return 0;
-	D_96F8 = D_9452 = TIL_90 + (tile_cur & 0x0f) * 4 - 4;
+    
+    /*modified to make 3 sprite NPC's in random dungeon encounters*/
+	D_96F8 = D_9452 = TIL_90 + (tile_cur & 0x0f) * 3 - 3;
+    /*modified to make 3 sprite NPC's in random dungeon encounters*/
+
 	D_8742._map.x8x8x8[Party._z][Party._y][Party._x] &= 0xf0;
 	for(si = 0x1f; si >= 0; si --) {
 		if(
@@ -124,6 +128,7 @@ C_8743()
 
 	return 1;
 }
+
 
 C_87E2()
 {

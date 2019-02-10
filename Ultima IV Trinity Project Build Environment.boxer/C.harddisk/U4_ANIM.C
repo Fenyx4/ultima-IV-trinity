@@ -58,12 +58,12 @@ unsigned D_1654 = 0;
 /*update/display wind*/
 ANI_Wind()
 {
-	if(D_1654-- == 0) {
+/*	if(D_1654-- == 0) {
 		D_1654 = speed_info - 1;
 		if(!U4_RND1(0xfc))
 			WindDir = (U4_RND1(2) + WindDir - 1) & 3;
 	}
-	C_353D(WindDir, "Wind");
+	C_353D(WindDir, "Wind");*/
 }
 
 unsigned D_1656[] = {192, 96, 60, 36, 20, 12, 8};
@@ -83,9 +83,15 @@ ANI_Sprites()
 			if(U4_RND2(1) != 0)
 			if(((speed_info < 8)?D_1656[speed_info - 1]:0xff) > U4_RND2(0xff))
 			D_8742._npc._gtile[si] = ((D_8742._npc._gtile[si] & 1) | di) ^ 1;
-		} else if(di >= TIL_90) {
+            
+            /* removed dragons from animation to make mounting work. Not sure of the issue yet. this is a kludge */
+		} else if(di >= TIL_90 && di < TIL_Tower) {
+            
+            /* modified here from 4 to 3 for 3 sprite NPCs on the world map*/
 			if(((speed_info < 8)?D_1656[speed_info - 1]:0xff) > U4_RND2(0xff))
-			D_8742._npc._gtile[si] = ((D_8742._npc._gtile[si] + 1) & 3) | di;
+			D_8742._npc._gtile[si] = (di + U4_RND4(3));
+            /* modified here from 4 to 3 for 3 sprite NPCs on the world map*/
+
 		} else if(di != TIL_80) {
 			D_8742._npc._gtile[si] = di;
 		}
@@ -137,12 +143,15 @@ unsigned char bp04;/*pos_y*/
 	bp_04 = Combat._map[si];
 	D_96F9[si] = bp_04;
 	/*opaque tiles*/
+    /*added doors as part of new tiles*/
 	if(
 		bp_04 == TIL_Forest_06 ||
 		bp_04 == TIL_Mount_08 ||
 		bp_04 == TIL_7E ||
 		bp_04 == TIL_49 ||
-		bp_04 == TIL_7F
+		bp_04 == TIL_7F ||
+        bp_04 == TIL_3B ||
+        bp_04 == TIL_3A
 	) return;
 
 	bp06 += bp0a;
@@ -367,7 +376,11 @@ C_3C54()
 				if(*loc_E == TIL_AC && *loc_C == TIL_3C || U4_RND1(loc_B) == 0) {
 					*loc_D = *loc_C;
 				} else if(U4_RND1(loc_B) == 0) {
-					*loc_C = ((*loc_C + 1) & 3) | *loc_E;
+                    
+                    /* modified here from 4 to 3 for 3 sprite NPCs in combat on world map*/
+					*loc_C = *loc_E + U4_RND4(3);
+                    /* modified here from 4 to 3 for 3 sprite NPCs in combat on world map*/
+
 					*loc_D = *loc_C;
 				} else {
 					*loc_D = *loc_C;

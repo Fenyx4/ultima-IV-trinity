@@ -101,7 +101,11 @@ int bp04;
 {
 	register int si;
 
-	if(Party.f_1dc != 0 && Party._tile == TIL_18) {
+    /*-----------Modified Code for Dragons!---------------*/
+    /*--------Prevent getting chest when flying-----------*/
+	if(Party.f_1dc == 1) {
+    /*-----------Modified Code for Dragons!---------------*/
+        
 		u4_puts(/*D_2281*/"Get chest\n");
 		w_DriftOnly();
 		return;
@@ -146,25 +150,52 @@ char D_22C8[] = "Broadsides Only!\n";
 	int loc_A, loc_B, loc_C, loc_D, loc_E, loc_F;
 
 	u4_puts(/*D_22B2*/"Fire ");
-	if(Party._tile < TIL_ShipW_10 || Party._tile > TIL_ShipS_13) {
-		w_What();
+    
+    /*-----------Modified Code for Dragons!---------------*/
+	if((Party._tile < TIL_ShipW_10 || Party._tile > TIL_ShipS_13) && (!(Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4))) {
+    /*-----------Modified Code for Dragons!---------------*/
+        
+        w_What();
 		return;
 	}
+    
+    /*-----------Added Code for Dragons!---------------*/
+    if (Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4){
+        u4_puts(/*D_22B8*/"Breath!\n");
+    } else {
+    /*-----------Added Code for Dragons!---------------*/
+        
 	u4_puts(/*D_22B8*/"Cannon!\n");
+        
+    /*-----------Added Code for Dragons!---------------*/
+    }
+    /*-----------Added Code for Dragons!---------------*/
+
+    
 	AskDir(/*D_22C1*/"Dir: ", &loc_C, &loc_D);
 	if(!(loc_C|loc_D))
 		return;
-	if(loc_C != 0) {
-		if(Party._tile != TIL_ShipN_11 && Party._tile != TIL_ShipS_13) {
-			u4_puts(D_22C8);
-			sound(2);
-			return;
-		}
-	} else if(Party._tile != TIL_ShipW_10 && Party._tile != TIL_ShipE_12) {
-		u4_puts(D_22C8);
-		sound(2);
-		return;
-	}
+    
+    /*-----------Added Code for Dragons!---------------*/
+    if(!(Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4)) {
+    /*-----------Added Code for Dragons!---------------*/
+
+        if(loc_C != 0) {
+            if(Party._tile != TIL_ShipN_11 && Party._tile != TIL_ShipS_13) {
+                u4_puts(D_22C8);
+                sound(2);
+                return;
+            }
+        } else if(Party._tile != TIL_ShipW_10 && Party._tile != TIL_ShipE_12) {
+            u4_puts(D_22C8);
+            sound(2);
+            return;
+        }
+        
+    /*-----------Added Code for Dragons!---------------*/
+    }
+    /*-----------Added Code for Dragons!---------------*/
+
 	/*-- FIRING --*/
 	sound(3);
 	loc_F = Party._x + loc_C;

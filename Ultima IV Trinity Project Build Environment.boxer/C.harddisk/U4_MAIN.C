@@ -152,7 +152,12 @@ Party_Maint()
 	}
 	/* */
 	MP_recover();
-	if(Party.f_1dc == 0) {
+    
+    /*-----------Modified Code for Dragons!---------------*/
+    /*-Makes turns pass for NPCs even when flying dragon--*/
+	if(Party.f_1dc == 0 || (Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4)) {
+    /*-----------Modified Code for Dragons!---------------*/
+        
 		C_7918();
 		NPC_Turn();
 		C_5851();

@@ -356,7 +356,6 @@ extern char D_080C[], D_0810[];
 extern char D_0814[], D_081C[];/*moongates positions*/
 extern char *Towne_Castle_Village[];
 extern char *Second_Floor[];
-extern char *Basement_Floor[];
 extern char D_0844[]; /*x-coordinate for locations*/
 extern char D_0864[]; /*y-coordinate for locations*/
 extern char *Shrines[];
@@ -401,7 +400,7 @@ extern unsigned char tile_forward;
 extern int Altar;
 extern int Tomb;
 extern unsigned D_9440;
-extern unsigned char ship_x, ship_y;
+extern unsigned char ship_x;
 extern unsigned char tile_cur;
 extern char D_9445;
 extern unsigned D_9446;
