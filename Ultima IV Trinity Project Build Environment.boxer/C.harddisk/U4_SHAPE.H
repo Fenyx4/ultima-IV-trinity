@@ -221,128 +221,64 @@
 #define TIL_8E 0x8E
 #define TIL_8F 0x8F
 
-/*====---- 3-tile monsters ----====*/
+/*====---- 4-tile monsters ----====*/
 
 /*rat*/
 #define TIL_90 0x90
 /*bat*/
-#define TIL_94 0x93
+#define TIL_94 0x94
 /*spider*/
-#define TIL_98 0x96
+#define TIL_98 0x98
 /*ghost*/
-#define TIL_9C 0x99
+#define TIL_9C 0x9C
 /*slime*/
-#define TIL_A0 0x9C
+#define TIL_A0 0xA0
 /*troll*/
-#define TIL_A4 0x9F
+#define TIL_A4 0xA4
 /*gremlin*/
-#define TIL_A8 0xA2
+#define TIL_A8 0xA8
 /*mimic*/
-#define TIL_AC 0xA5
+#define TIL_AC 0xAC
 /*reaper*/
-#define TIL_B0 0xA8
+#define TIL_B0 0xB0
 /*insects*/
-#define TIL_B4 0xAB
+#define TIL_B4 0xB4
 /*gazer*/
-#define TIL_B8 0xAE
+#define TIL_B8 0xB8
 /*phantom*/
-#define TIL_BC 0xB1
+#define TIL_BC 0xBC
 /*orc*/
-#define TIL_C0 0xB4
+#define TIL_C0 0xC0
 /*skeleton*/
-#define TIL_C4 0xB7
+#define TIL_C4 0xC4
 /*rogue*/
-#define TIL_C8 0xBA
+#define TIL_C8 0xC8
 /*python*/
-#define TIL_CC 0xBD
+#define TIL_CC 0xCC
 /*ettin*/
-#define TIL_D0 0xC0
+#define TIL_D0 0xD0
 /*headless*/
-#define TIL_D4 0xC3
+#define TIL_D4 0xD4
 /*cyclops*/
-#define TIL_D8 0xC6
+#define TIL_D8 0xD8
 /*wisp*/
-#define TIL_DC 0xC9
+#define TIL_DC 0xDC
 /*mage*/
-#define TIL_E0 0xCC
+#define TIL_E0 0xE0
 /*lyche*/
-#define TIL_E4 0xCF
+#define TIL_E4 0xE4
 /*lava lizard*/
-#define TIL_E8 0xD2
-#define TIL_E9 0xD3
+#define TIL_E8 0xE8
+#define TIL_E9 0xE9
 /*zorn*/
-#define TIL_EC 0xD5
+#define TIL_EC 0xEC
 /*daemon*/
-#define TIL_F0 0xD8
+#define TIL_F0 0xF0
 /*hydra*/
-#define TIL_F4 0xDB
+#define TIL_F4 0xF4
 /*dragon*/
-#define TIL_F8 0xDE
+#define TIL_F8 0xF8
 /*balron*/
-#define TIL_FC 0xE1
-
-/*====---- 3-tile animated objects ----====*/
-
-/*fireplace*/
-#define TIL_Fireplace_1 0xE4
-/*fireplace*/
-#define TIL_Fireplace_2 0xE5
-/*fireplace*/
-#define TIL_Fireplace_3 0xE6
-/*brazier*/
-#define TIL_Brazier 0xE7
-/*fountain*/
-#define TIL_Fountain 0xEA
-
-/*====---- new buildings and building objects ----====*/
-
-/*tower*/
-#define TIL_Tower 0xED
-/*oracle good*/
-#define TIL_Oracle_Good 0xEE
-/*oracle destroyed*/
-#define TIL_Oracle_Destroyed 0xEF
-/*crypt open*/
-#define TIL_Crypt_Open 0xF0
-/*crypt closed*/
-#define TIL_Crypt_Closed 0xF1
-/*hamlet*/
-#define TIL_Hamlet 0xF2
-/*roof A*/
-#define TIL_Roof_A 0xF3
-/*roof B*/
-#define TIL_Roof_B 0xF4
-/*gargoyle*/
-#define TIL_Gargoyle 0xF5
-/*upper window*/
-#define TIL_Upper_Window 0xF6
-/*lower window*/
-#define TIL_Lower_Window 0xF7
-/*crenellations*/
-#define TIL_Crenn_1 0xF8
-/*crenellations*/
-#define TIL_Crenn_2 0xF9
-/*crenellations*/
-#define TIL_Crenn_3 0xFA
-/*crenellations*/
-#define TIL_Crenn_4 0xFB
-/*crenellations*/
-#define TIL_Crenn_5 0xFC
-/*crenellations*/
-#define TIL_Crenn_6 0xFD
-/*crenellations*/
-#define TIL_Crenn_7 0xFE
-/*crenellations*/
-#define TIL_Crenn_8 0xFF
-
-/*-----------Added Code for Dragons!---------------*/
-/*dragon mount */
-#define TIL_Dragon1 0xDE
-#define TIL_Dragon2 0xDF
-#define TIL_Dragon3 0xE0
-#define TIL_Dragon4 0xE0
-
-/*-----------Added Code for Dragons!---------------*/
-
+#define TIL_FC 0xFC
 
 #endif

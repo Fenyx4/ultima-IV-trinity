@@ -54,9 +54,9 @@ char *Talk_Files[] ={
     /*D_16D1*/"FORESTCA.TLK",
     /*D_16C6*/"MOUNTCA.TLK",
     /*D_16D1*/"SWAMPCA.TLK",
-    /*D_16C6*/"PLAINSC1.TLK",
+    /*D_16C6*/"PLAINSCA.TLK",
     /*D_16D1*/"VALLEYCA.TLK",
-    /*D_16C6*/"FARMCA.TLK",
+    /*D_16C6*/"PLAINSCA.TLK",
     /*D_16D1*/"VALLEYCA.TLK",
     /*Crypts*/
     /*D_07EE*/"M",
@@ -119,33 +119,52 @@ unsigned bp04;
 	CurMode = MOD_BUILDING;
 }
 
-Load_Towne_2nd(bp04,bp02)
-unsigned bp04,bp02;
+Load_Towne_1st(bp04)
+unsigned bp04;
 {
 
-    if(Load(Second_Floor[bp04 - 0x01 + (bp02 * 40)], sizeof(struct t_500), &D_8742) == -1)
+    if(Load(Towne_Castle_Village[bp04 - 0x01], sizeof(struct t_500), &D_8742) == -1)
+        exit(3);
+    File_TLK = File_TLK_Buff;
+}
+
+Load_Towne_2nd(bp04)
+unsigned bp04;
+{
+
+    if(Load(Second_Floor[bp04 - 0x01], sizeof(struct t_500), &D_8742) == -1)
         exit(3);
     File_TLK = File_TLK_2;
+}
+
+Load_Towne_Sub(bp04)
+unsigned bp04;
+{
+    
+    if(Load(Basement_Floor[bp04 - 0x01], sizeof(struct t_500), &D_8742) == -1)
+        exit(3);
+    File_TLK = File_TLK_B;    
 }
 
 /*load dungeon files*/
 EXP_Load_Dungeon()
 {
 	register int si;
-    char *dun_choi;
 
     /*made party._loc one bigger to ensure that Abyss is loaded correctly?*/
     if(Party._loc <= 0x19) {
-        dun_choi = Dungeons[Party._loc - 0x11];
-    } else {
-        dun_choi = Crypts[Party._loc - 0x29];
-    }
-        if(Load(dun_choi, sizeof(tMap8x8x8), &(D_8742._map)) == -1)
-            exit(3);
-        File_DNG = dopen(dun_choi, 0);
+        if(Load(Dungeons[Party._loc - 0x11], sizeof(tMap8x8x8), &(D_8742._map)) == -1)
+		exit(3);
+        File_DNG = dopen(Dungeons[Party._loc - 0x11], 0);
         for(si = 0x1f; si >= 0; si --)
             D_8742._npc._tile[si] = 0;
-    
+    } else {
+        if(Load(Crypts[Party._loc - 0x29], sizeof(tMap8x8x8), &(D_8742._map)) == -1)
+        exit(3);
+        File_DNG = dopen(Crypts[Party._loc - 0x29], 0);
+        for(si = 0x1f; si >= 0; si --)
+            D_8742._npc._tile[si] = 0;
+    }
 }
 
 EXP_Set_Dungeon()
@@ -162,18 +181,7 @@ Enter_Dungeon()
 {
 	Gra_CR();
 	Gra_CR();
-    
-    /*-----------Modified Code for Dragons!---------------*/
-    /*---Gives unique messages for Horse or Dragon mount--*/
-    if(Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4) {
-        Party._loc = 0;
-        w_No_Dragon();
-        return;
-    }
-    
-	if(Party._tile == TIL_HorseW_14 || Party._tile == TIL_HorseE_15) {
-    /*-----------Modified Code for Dragons!---------------*/
-        
+	if(Party._tile != TIL_1F) {
 		Party._loc = 0;
 		w_OnlyOnFoot();
 		return;
@@ -188,15 +196,6 @@ Enter_Dungeon()
 Enter_Towne()
 {
 	register int si;
-    
-    /*-----------Added Code for Dragons!---------------*/
-    /*-----Prevents dragons from entering townes-------*/
-    if(Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4) {
-        Party._loc = 0;
-        w_No_Dragon();
-        return;
-    }
-    /*-----------Added Code for Dragons!---------------*/
     
     if (Party._tile == TIL_HorseW_14 || Party._tile == TIL_HorseE_15){
     /*resets the horse coordinates for a later check whether to 'restore' a horse*/
@@ -270,18 +269,9 @@ EXP_Enter_Abyss()
 CMD_Enter()
 {
 	register int si;
-    
-    /*-----------Modified Code for Dragons!---------------*/
-    /*----Returns unqiue negative responses when flying---*/
-    if(Party.f_1dc == 1){
-        W_DriftOnly();
-        return;
-    }
 
 	u4_puts("Enter ");
-	if(Party._loc != 0) {
-    /*-----------Modified Code for Dragons!---------------*/
-        
+	if(Party._loc != 0 || Party._tile == TIL_18) {
 		w_What();
 		return;
 	}
@@ -305,7 +295,7 @@ CMD_Enter()
 	Party.out_x = Party._x;
 	Party.out_y = Party._y;
 	switch(D_8742._map.x32x32[D_959C.y][D_959C.x]) {
-        case TIL_Dung_09: case TIL_Crypt_Open:
+		case TIL_Dung_09:
 			u4_puts("dungeon!\n\n");
 			u4_puts(D_Locations[Party._loc - 1]);
 			Enter_Dungeon();
@@ -318,16 +308,15 @@ CMD_Enter()
 			u4_puts("castle!\n\n");
             Enter_Towne();
 		break;
-            
-        /*added cases for 3 sprite NPCs and new tiles */
-        case TIL_Hamlet:
-            u4_puts("hamlet!\n\n");
-            Enter_Towne();
-        break;
-        case TIL_Village_0C:
-            u4_puts("village!\n\n");
-            Enter_Towne();
-            
+		case TIL_Village_0C:
+            if(Party._loc > 0x20) {
+                u4_puts("hamlet!\n\n");
+                Enter_Towne();
+            }
+            else {
+                u4_puts("village!\n\n");
+                Enter_Towne();
+            }
 		break;
 		case TIL_1D:
 			u4_puts("ruin!\n\n");
@@ -341,18 +330,20 @@ CMD_Enter()
 		case TIL_46:
 			EXP_Enter_Abyss();
 		break;
-        case TIL_Oracle_Good:
-            u4_puts("Oracle!");
-            /*u4_puts("the Oracle of\n");*/
-            /*u4_puts(D_Principles[Party._loc - 0x2c]);*/
-            Gra_CR();
-            Enter_Oracle();
-        break;
 		case TIL_1E:
+            if(Party._loc >= 0x29){
+                u4_puts("Oracle!");
+                /*u4_puts("the Oracle of\n");*/
+                /*u4_puts(D_Principles[Party._loc - 0x2c]);*/
+                Gra_CR();
+                Enter_Oracle();
+            }
+            else {
 			u4_puts("the Shrine of\n");
 			u4_puts(D_Virtues[Party._loc - 0x19]);
 			Gra_CR();
 			Enter_Shrine();
+            }
 		break;
 		default:
 			w_What();
@@ -370,19 +361,10 @@ EXP_OnFoot()
 	}
 	if(si == 7)
 		si = U4_RND1(15) | 0x10;
-        /*added to fix mounting dragons */
-        if(Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4)
-            Party._tile = TIL_Dragon1;
-        /*added to fix mounting dragons */
 	D_8742._npc._gtile[si] = D_8742._npc._tile[si] = Party._tile;
 	D_8742._npc._x[si] = Party._x;
 	D_8742._npc._y[si] = Party._y;
-    
-    /*-----------Modified Code for Dragons!---------------*/
-    /*-Hit points for unmounted Dragons and Ship stored here--*/
-	D_8742._npc._tlkidx[si] = Party._ship;
-    /*-----------Modified Code for Dragons!---------------*/
-    
+	D_8742._npc._var[si] = D_8742._npc._tlkidx[si] = 0;
 	Party._tile = TIL_1F;
 	Gra_CR();
 }
@@ -391,30 +373,21 @@ CMD_X_it()
 {
 	u4_puts("X-it ");
 	if(Party._tile < TIL_HorseW_14) {
-        
-        /*-----------Modified Code for Dragons!---------------*/
-        /*-Removed because no longer needed with new hp code--*/
-		/*ship_x = Party._x;
-		ship_y = Party._y;*/
-        /*-----------Modified Code for Dragons!---------------*/
-
+		ship_x = Party._x;
+		ship_y = Party._y;
 		EXP_OnFoot();
-    
-    /*-----------Modified Code for Dragons!---------------*/
-    /*----------Adds case for Dragons with Horese---------*/
-    } else if((Party._tile < TIL_16) ||  (Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4 && Party.f_1dc == 0)) {
-    /*-----------Modified Code for Dragons!---------------*/
+	} else if(Party._tile < TIL_16) {
         
         if(CurMode == MOD_BUILDING){
             Party._tile = TIL_1F;
             DoublePace = 0;
-            D_8742._npc._tile[ship_x] = D_8742._npc._gtile[ship_x] = TIL_HorseE_15;
-            D_8742._npc._x[ship_x] = Party._x;
-            D_8742._npc._y[ship_x] = Party._y;
+            D_8742._npc._tile[0] = D_8742._npc._gtile[0] = TIL_HorseE_15;
+            D_8742._npc._x[0] = Party._x;
+            D_8742._npc._y[0] = Party._y;
             Horse_x = Party._x;
             Horse_y = Party._y;
-            D_8742._npc._var[ship_x] = 1;
-            D_8742._npc._tlkidx[ship_x] = 0;
+            D_8742._npc._var[0] = 1;
+            D_8742._npc._tlkidx[0] = 0;
             Gra_CR();
         }
         else {
@@ -425,13 +398,6 @@ CMD_X_it()
         
 	} else if(Party._tile == TIL_18 && Party.f_1dc == 0) {
 		EXP_OnFoot();
-        
-    /*-----------Added Code for Dragons!---------------*/
-    /*-----------Modified Code for Dragons!------------*/
-    } else if(Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4 && Party.f_1dc == 1){
-        W_DriftOnly();
-    /*-----------Added Code for Dragons!---------------*/
-        
 	} else {
 		w_What();
 	}
@@ -440,10 +406,10 @@ CMD_X_it()
 EXP_Restore_Horse()
 {
     if (HorseTown == 1){
-        D_8742._npc._tile[ship_x] = D_8742._npc._gtile[ship_x] = TIL_HorseE_15;
-        D_8742._npc._x[ship_x] = Horse_x;
-        D_8742._npc._y[ship_x] = Horse_y;
-        D_8742._npc._var[ship_x] = 1;
+        D_8742._npc._tile[0] = D_8742._npc._gtile[0] = TIL_HorseE_15;
+        D_8742._npc._x[0] = Horse_x;
+        D_8742._npc._y[0] = Horse_y;
+        D_8742._npc._var[0] = 1;
     }
 }
 
@@ -455,21 +421,17 @@ unsigned bp04;
 	for(si = 31; si >= 8; si --) {
 		if(
 			Party._x == D_8742._npc._x[si] &&
-			Party._y == D_8742._npc._y[si]
+			Party._y == D_8742._npc._y[si] &&
+			bp04 == (D_8742._npc._tile[si] & ~3)
 		) break;
 	}
 	if(si != 7)
-		D_8742._npc._gtile[si] = D_8742._npc._tile[si]  = 0;
-        ship_x = si;
+		D_8742._npc._gtile[si] = D_8742._npc._tile[si] = 0;
 		Party._tile = tile_cur;
 }
 
 CMD_Board()
 {
-    /*-----------Added Code for Dragons!---------------*/
-    register int si;
-    /*-----------Added Code for Dragons!---------------*/
-    
 	if(Party._tile != TIL_1F) {
 		u4_puts("Board: ");
 		w_Cant_t();
@@ -487,25 +449,6 @@ CMD_Board()
             return;
         }
 	}
-    
-    /*-----------Added Code for Dragons!---------------*/
-    /*Addeds mounting, and new handling for hit points-*/
-    if(tile_cur >= TIL_Dragon1 && tile_cur <= TIL_Dragon4) {
-        C_4206(TIL_Dragon1);
-        u4_puts("Mount Dragon!\n");
-        /*Party._ship = 50;*/
-        
-        /*saves the dragon's hitpoints as the party's ship hitpoints */
-       for(si = 31; si >= 8 ;si --) {
-            if(D_8742._npc._x[si] == Party._x && D_8742._npc._y[si] == Party._y){
-                Party._ship = D_8742._npc._tlkidx[si];
-            }
-        }
-        
-        return;
-    }
-    /*-----------Added Code for Dragons!---------------*/
-    
 	u4_puts("Board ");
 	if(tile_cur == TIL_18) {
 		C_4206(TIL_18);
@@ -519,25 +462,8 @@ CMD_Board()
 	}
 	C_4206(TIL_ShipW_10);
 	u4_puts("Frigate!\n");
-    
-    /*-----------Modified Code for Dragons!---------------*/
-    /*-Removed because no longer needed with new hp code--*/
-    /*if(ship_x != Party._x || ship_y != Party._y) {*/
-    /*-----------Modified Code for Dragons!---------------*/
-
-    
-    /*-----------Added Code for Dragons!---------------*/
-    /*--Aligns new HP handling for Dragons with Ships--*/
-		/*Party._ship = 50;*/
-
-        for(si = 31; si >= 8 ;si --) {
-            if(D_8742._npc._x[si] == Party._x && D_8742._npc._y[si] == Party._y){
-                Party._ship = D_8742._npc._tlkidx[si];
-            }
-        }
-    /*}*/
-    /*-----------Added Code for Dragons!---------------*/
-    
+	if(ship_x != Party._x || ship_y != Party._y)
+		Party._ship = 50;
 }
 
 CMD_Yell()
@@ -582,25 +508,17 @@ CMD_Open()
 	AskDir("Open: ", &bp_02, &bp_04);
 	if(!(bp_02 | bp_04))
 		return;
-    
-    /* tweaked for 3 sprite NPC's to allow north south doors */
-	if((bp_02 + Party._x) > 0x1f) {
+	if((bp_02 + Party._x) > 0x1f || bp_04) {
 		w_NotHere();
 	} else {
 		register unsigned char *si;
 
-		si = &(D_8742._map.x32x32[bp_04 + Party._y][bp_02 + Party._x]);
-    /* tweaked for 3 sprite NPC's to allow north south doors */
-
+		si = &(D_8742._map.x32x32[Party._y][bp_02 + Party._x]);
 		if(*si == TIL_3A) {
 			w_Cant_t();
 		} else if(*si == TIL_3B) {
 			D_17FA = (bp_02 + Party._x);
-            
-            /* tweaked for 3 sprite NPC's to allow north south doors */
-			D_17FC = (bp_04 + Party._y);
-            /* tweaked for 3 sprite NPC's to allow north south doors */
-            
+			D_17FC = Party._y;
 			D_17FE = 5;
 			*si = TIL_3E;
 			u4_puts("\nOpened!\n");
@@ -618,16 +536,12 @@ CMD_Jimmy()
 	AskDir(/*D_1825*/"Dir: ", &bp_02, &bp_04);
 	if(!(bp_02 | bp_04))
 		return;
-    
-    /* tweaked for 3 sprite NPC's to allow north south doors */
-	if(CurMode != MOD_BUILDING || (bp_02 + Party._x) > 0x1f) {
+	if(CurMode != MOD_BUILDING || (bp_02 + Party._x) > 0x1f || bp_04) {
 		w_NotHere();
 	} else {
 		register unsigned char *si;
 
-		si = &(D_8742._map.x32x32[bp_04 + Party._y][bp_02 + Party._x]);
-    /* tweaked for 3 sprite NPC's to allow north south doors */
-
+		si = &(D_8742._map.x32x32[Party._y][bp_02 + Party._x]);
 		if(*si != TIL_3A) {
 			w_NotHere();
 			return;
@@ -648,21 +562,11 @@ CMD_Klimb()
 	u4_puts("Klimb ");
     
 	if(Party._loc == 0) {
-        
-        /*-----------Modified Code for Dragons!---------------*/
-		if(Party._tile != TIL_18 && (!(Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4))) {
-        /*-----------Modified Code for Dragons!---------------*/
-            
+		if(Party._tile != TIL_18) {
 			w_What();
 			return;
 		}
 		u4_puts("altitude\n");
-        
-        /*-----------Modified Code for Dragons!---------------*/
-        /*-----------Modified Code for Dragons!---------------*/
-        DoublePace = 1;
-        /*-----------Modified Code for Dragons!---------------*/
-        
 		Party.f_1dc = 1;
 		D_9440 = 0;
 		return;
@@ -677,15 +581,20 @@ CMD_Klimb()
         return;
     }
     if(tile_cur == TIL_1B) {
-        u4_puts("ladder!\n");
-        Load_Towne_2nd(Party._loc,(Party._z + 2));
-        Party._z++;
-        if(Party._z == 0) {
+        if(Party._z == -1) {
+            u4_puts("to ground floor!\n");
+            Load_Towne_1st(Party._loc);
             EXP_Clear_PartyNPC();
             EXP_Restore_Horse();
+            Party._z = 0;
+            return;
         }
-        return;
-
+        if(Party._z == 0) {
+            u4_puts("to second floor!\n");
+            Load_Towne_2nd(Party._loc);
+            Party._z = 1;
+            return;
+        }
     }
     else {
 		w_What();
@@ -698,38 +607,17 @@ CMD_Descend()
         C_431D();
     u4_puts(/*D_1886*/"Descend ");
     
-    /*-----------Modified Code for Dragons!---------------*/
-    if(Party.f_1dc == 1){
-        
-        if(Party._tile == TIL_18) {
-            u4_puts("Land Balloon\n");
-            if(tile_cur != TIL_Grass_04) {
-                sound(1);
-                w_NotHere();
-                return;
-            }
-        }
-        else if(Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4) {
-            u4_puts("Land Dragon\n");
-            if(!(tile_cur >= TIL_Swamp_03 && tile_cur <= TIL_Mount_08)) {
-                sound(1);
-                w_NotHere();
-                return;
-            }
-        }
-        
-    /*-----------Modified Code for Dragons!---------------*/
-            
+	if(Party._tile == TIL_18) {
+		u4_puts(/*D_1867*/"Land Balloon\n");
+		if(tile_cur != TIL_Grass_04) {
+			sound(1);
+			w_NotHere();
+			return;
+		}
 		if(Party.f_1dc == 0) {
 			u4_puts(/*D_1875*/"Already Landed!\n");
 			return;
 		}
-        
-        
-        /*-----------Modified Code for Dragons!---------------*/
-        DoublePace = 0;
-        /*-----------Modified Code for Dragons!---------------*/
-        
 		Party.f_1dc = 0;
 		D_9440 = 1;
 		return;
@@ -753,14 +641,20 @@ CMD_Descend()
             EXP_Set_Dungeon();
             return;
         }
-        u4_puts("ladder!\n");
-        Load_Towne_2nd(Party._loc,Party._z);
-        Party._z--;
         if(Party._z == 0) {
+            u4_puts("to basement!\n");
+            Load_Towne_Sub(Party._loc);
+            Party._z = -1;
+            return;
+        }
+        if(Party._z == 1) {
+            u4_puts("to first floor!\n");
+            Load_Towne_1st(Party._loc);
             EXP_Clear_PartyNPC();
             EXP_Restore_Horse();
+            Party._z = 0;
+            return;
         }
-        return;
         
     }
     else {

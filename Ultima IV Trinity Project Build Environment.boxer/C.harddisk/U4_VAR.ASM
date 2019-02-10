@@ -9,7 +9,7 @@ XOE	ENDS
 
 PUBLIC D_9140,D_9141,D_9142,Party
 PUBLIC D_933A,D_943A,tile_forward,Altar
-PUBLIC D_9440,ship_x,tile_cur
+PUBLIC D_9440,ship_x,ship_y,tile_cur
 PUBLIC D_9445,D_9446,D_9448,D_944A
 PUBLIC D_9452,pShapes,D_9458,CurMode
 PUBLIC spell_cnt,D_946C,Combat,Fighters
@@ -41,6 +41,7 @@ Altar	dw ?
 Tomb	dw ?
 D_9440	dw ?
 ship_x	db ?	;D_9442
+ship_y	db ?	;D_9443
 tile_cur	db ?	;D_9444
 D_9445	db ?
 D_9446	dw ?

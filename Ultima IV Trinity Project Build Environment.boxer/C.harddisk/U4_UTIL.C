@@ -277,16 +277,9 @@ dspl_Stats()
 	if(Party._tile < TIL_HorseW_14) {
 		u4_puts(" SHP:");
 		u4_putl(Party._ship, 2, '0');
-        
-    /*-----------Added Code for Dragons!---------------*/
-    } else if (Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4) {
-        u4_puts(" DRA:");
-        u4_putl(Party._ship, 2, '0');
-    } else {
-    /*-----------Added Code for Dragons!---------------*/
-        
+	} else {
 		u4_puts(" G:");
-		u4_putl(Party._z, 4, '0');
+		u4_putl(Party._gold, 4, '0');
 	}
 	txt_Y = loc_E;
 	txt_X = loc_A;
@@ -361,7 +354,7 @@ Death_Revive()
 	u4_puts("I feel motion...\n");
 	u_delay(5, 0);
 	Party._tile = TIL_1F;
-    Party._x = 0x13; Party._y = 0x08; Party._z = 1;
+	Party._x = 0x13; Party._y = 0x08;
 	Party.out_x = 0x56;
 	Party.out_y = 0x6c;
 
@@ -458,14 +451,6 @@ int bp06;
 	dspl_Stats();
 	return 1;
 }
-
-/*-----------Added Code for Dragons!---------------*/
-w_No_Dragon()
-{
-    u4_puts("Not on dragon!\n");
-    u_kbflush();
-}
-/*-----------Added Code for Dragons!---------------*/
 
 w_What()
 {
@@ -751,8 +736,7 @@ unsigned char bp04;
 {
 	if(bp04 >= TIL_80) {
 		if(bp04 >= TIL_90)
-            /*modified to get correct creature name with 3 sprite NPCs */
-			return D_Crea[(bp04 - TIL_80)/3 - (TIL_90 - TIL_80)/3];
+			return D_Crea[(bp04 - TIL_80)/4 - (TIL_90 - TIL_80)/4];
 		else
 			return D_Sea_Crea[(bp04 - TIL_80)/2];
 	}
@@ -778,11 +762,7 @@ int bp04;
     }
 	for(loc_B = Party._members - 1; loc_B >= 0; loc_B --)
 		Gra_11(loc_B);
-    
-    /*-----------Modified Code for Dragons!---------------*/
-	if(CurMode >= MOD_COMBAT || (Party._tile > TIL_ShipS_13 && (!(Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4)))) {
-    /*-----------Modified Code for Dragons!---------------*/
-    
+	if(CurMode >= MOD_COMBAT || Party._tile > TIL_ShipS_13) {
 		/*normal case*/
 
 		for(loc_B = Party._members - 1; loc_B >= 0; loc_B --) {
@@ -796,33 +776,10 @@ int bp04;
 		/*on ship*/
 		if((Party._ship -= 10) < 0) {
 			Party._ship = 0;
-            
-            /*-----------Added Code for Dragons!---------------*/
-            if(Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4 && Party.f_1dc == 0) {
-                u4_puts("Thy Dragon Perishes!\n");
-                Party._tile = TIL_1F;
-                DoublePace = 0;
-                Gra_CR();
-                return;
-            }
-            /*-----------Added Code for Dragons!---------------*/
-
 			for(loc_B = Party._members; --loc_B >= 0; )
 				Gra_11(loc_B);
 			dspl_Stats();
-            
-            /*-----------Added Code for Dragons!---------------*/
-            if(Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4 && Party.f_1dc == 1) {
-                u4_puts("Thy Dragon Crashes!\n");
-            } else {
-            /*-----------Added Code for Dragons!---------------*/
-
 			u4_puts("Thy Ship Sinks!\n");
-            
-            /*-----------Added Code for Dragons!---------------*/
-            }
-            /*-----------Added Code for Dragons!---------------*/
-
 			Death_Revive();
 		}
 	}

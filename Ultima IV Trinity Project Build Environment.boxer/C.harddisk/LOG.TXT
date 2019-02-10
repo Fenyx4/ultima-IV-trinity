@@ -1,8 +1,7 @@
 MAKE  Version 2.0   Copyright (c) 1987, 1988 Borland International
 
-Available memory 597396 bytes
+Available memory 597500 bytes
 
-	msc /Gs /Osa /Zp /Gc /J u4_main2,ma2;
 	msc /Gs /Osa /Zp /Gc u4_explo,ex;
 	link /MAP @u4.rsp
 Microsoft (R) Overlay Linker  Version 3.51

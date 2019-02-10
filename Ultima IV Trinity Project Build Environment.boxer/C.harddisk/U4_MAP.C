@@ -130,11 +130,6 @@ MAP_Leaving()
 	Party._loc = 0;
     HorseTown = 0;
 	Party.f_1dc = 0;
-    
-    /*added to make new Klimb and Descend functions work */
-    Party._z = 0;
-    /*added to make new Klimb and Descend functions work */
-
 	D_9440 = 1;
 
     
@@ -193,7 +188,7 @@ unsigned bp04;
     if(bp04 == 11){
         for(si = 11; si < 14; si++) {
             
-            D_8742._npc._gtile[si] = D_8742._npc._tile[si] = D_8742._npc._var[si] = TIL_Oracle_Destroyed;
+            D_8742._npc._gtile[si] = D_8742._npc._tile[si] = D_8742._npc._var[si] = TIL_43;
             D_8742._npc._x[si] = D_8742._npc._var[si + 6] = D_0844[si + 32];
             D_8742._npc._y[si] = D_8742._npc._var[si + 12] = D_0864[si + 32];
         }
@@ -201,7 +196,7 @@ unsigned bp04;
     else {
     
     /*closes the crypts*/
-    D_8742._npc._gtile[bp04] = D_8742._npc._tile[bp04] = D_8742._npc._var[bp04] = TIL_Crypt_Closed;
+    D_8742._npc._gtile[bp04] = D_8742._npc._tile[bp04] = D_8742._npc._var[bp04] = TIL_Mount_08;
     D_8742._npc._x[bp04] = D_8742._npc._var[bp04 + 6] = Party._x;
     D_8742._npc._y[bp04] = D_8742._npc._var[bp04 + 12] = Party._y;
     /*
@@ -323,23 +318,20 @@ C_2941()
 	}
 }
 
-/*-----------Modified Code for Dragons!---------------*/
-/*Inserted Dragons so they are not solid and mountable*/
 unsigned char D_0904[] = {
 	TIL_Swamp_03,TIL_Grass_04,TIL_Scrub_05,TIL_Forest_06,TIL_Hills_07,TIL_Dung_09,TIL_Town_0A,TIL_Castle_0B,TIL_Village_0C,
-	TIL_ShipW_10,TIL_ShipN_11,TIL_ShipE_12,TIL_ShipS_13,TIL_HorseW_14,TIL_HorseE_15,TIL_Dragon1,TIL_Dragon2,TIL_Dragon3,TIL_Dragon4,TIL_16,TIL_17,TIL_18,
+	TIL_ShipW_10,TIL_ShipN_11,TIL_ShipE_12,TIL_ShipS_13,TIL_HorseW_14,TIL_HorseE_15,TIL_16,TIL_17,TIL_18,
 	TIL_19,TIL_1A,TIL_1B,TIL_1C,TIL_1D,TIL_1E,TIL_3C,TIL_3E,TIL_3F,
-	TIL_43,TIL_44,TIL_46,TIL_47,TIL_49,TIL_4A,TIL_4C,TIL_8E,TIL_8F,TIL_Fireplace_1,TIL_Fireplace_2,TIL_Fireplace_3,TIL_Tower,TIL_Oracle_Good,TIL_Crypt_Open,TIL_Hamlet,
+	TIL_43,TIL_44,TIL_46,TIL_47,TIL_49,TIL_4A,TIL_4C,TIL_8E,TIL_8F,
 	0/*End of list*/
 };
-/*-----------Modified Code for Dragons!---------------*/
 
 /*isBrickSolid*/
 C_2999(bp04)
 unsigned char bp04;
 {
 	register int si;
-    
+
 	for(si = 0; D_0904[si]; si ++)
 		if(bp04 == D_0904[si])
 			return 1;
@@ -355,19 +347,7 @@ unsigned char bp04;
 
 /*C_29DE*/w_DriftOnly()
 {
-    /*-----------Added Code for Dragons!---------------*/
-    if(Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4){
-        u4_puts("Descend First!\n");
-    }
-    else{
-    /*-----------Added Code for Dragons!---------------*/
-
 	u4_puts("Drift Only!\n");
-        
-    /*-----------Added Code for Dragons!---------------*/
-    }
-    /*-----------Added Code for Dragons!---------------*/
-
 	u_kbflush();
 }
 
@@ -431,29 +411,16 @@ unsigned char bp04;
 /*move North*/
 C_2B19()
 {
-
 	/*LB's castle middle wing*/
-    
-    /*-----------Modified Code for Dragons!---------------*/
-	if(tile_cur == TIL_CasEn_0E && Party.f_1dc != 1) {
-    /*-----------Modified Code for Dragons!---------------*/
-
+	if(tile_cur == TIL_CasEn_0E) {
 		w_Blocked();
 		return 0;
 	}
-    
-    /*-----------Modified Code for Dragons!---------------*/
-    if(tile_north != TIL_CasEn_0E && !C_2999(tile_north) && Party.f_1dc != 1) {
-    /*-----------Modified Code for Dragons!---------------*/
-
+	if(tile_north != TIL_CasEn_0E && !C_2999(tile_north)) {
 		w_Blocked();
 		return 0;
 	}
-    
-    /*-----------Modified Code for Dragons!---------------*/
-	if(C_29EF(tile_north) && Party.f_1dc != 1) {
-    /*-----------Modified Code for Dragons!---------------*/
-
+	if(C_29EF(tile_north)) {
 		w_SlowProgress();
 		return 1;
 	}
@@ -475,7 +442,7 @@ C_2B19()
 
 /*C_2B8C*/CMDDIR_Up()
 {
-    if(Party._tile == TIL_ShipW_10 || Party._tile == TIL_ShipE_12 || Party._tile == TIL_ShipS_13) {
+	if(Party._tile == TIL_ShipW_10 || Party._tile == TIL_ShipE_12 || Party._tile == TIL_ShipS_13) {
 		Party._tile = TIL_ShipN_11;
 		u4_puts("Turn North!\n");
 	} else if(Party._tile == TIL_ShipN_11) {
@@ -492,18 +459,8 @@ C_2B19()
 	} else {
         CryptCollapse();
 
-        /*-----------Modified Code for Dragons!---------------*/
-        if(DoublePace && Party.f_1dc == 1){
-            u4_puts("Fly North!\n");
-            sound(0);
-
-        } else {
 		sound(0);
 		u4_puts("North\n");
-        }
-        /*-----------Modified Code for Dragons!---------------*/
-
-
 		if(C_2B19() && DoublePace) {
 			t_callback();
 			sound(0);
@@ -522,17 +479,11 @@ C_2B19()
 /*move South*/
 C_2C25()
 {
-    /*-----------Modified Code for Dragons!---------------*/
-	if(!C_2999(tile_south) && Party.f_1dc != 1) {
-    /*-----------Modified Code for Dragons!---------------*/
-
+	if(!C_2999(tile_south)) {
 		w_Blocked();
 		return 0;
 	}
-    /*-----------Modified Code for Dragons!---------------*/
-	if(C_29EF(tile_south) && Party.f_1dc != 1) {
-    /*-----------Modified Code for Dragons!---------------*/
-        
+	if(C_29EF(tile_south)) {
 		w_SlowProgress();
 		return 1;
 	}
@@ -554,7 +505,7 @@ C_2C25()
 
 /*C_2C8A*/CMDDIR_Down()
 {
-    if(Party._tile == TIL_18) {
+	if(Party._tile == TIL_18) {
 		w_DriftOnly();
 	} else if(Party._tile == TIL_ShipW_10 || Party._tile == TIL_ShipE_12 || Party._tile == TIL_ShipN_11) {
 		Party._tile = TIL_ShipS_13;
@@ -571,16 +522,8 @@ C_2C25()
 	} else {
         CryptCollapse();
 
-        /*-----------Modified Code for Dragons!---------------*/
-        if(DoublePace && Party.f_1dc == 1){
-            u4_puts("Fly South!\n");
-        } else {
         sound(0);
 		u4_puts("South\n");
-        }
-        /*-----------Modified Code for Dragons!---------------*/
-
-        
 		if(C_2C25() && DoublePace) {
 			t_callback();
 			sound(0);
@@ -622,18 +565,11 @@ CryptCollapse() {
 /*move West*/
 C_2D44()
 {
-    /*-----------Modified Code for Dragons!---------------*/
-	if(!C_2999(tile_west) && Party.f_1dc != 1) {
-    /*-----------Modified Code for Dragons!---------------*/
-        
+	if(!C_2999(tile_west)) {
 		w_Blocked();
 		return 0;
 	}
-    
-    /*-----------Modified Code for Dragons!---------------*/
-	if(C_29EF(tile_west) && Party.f_1dc != 1) {
-    /*-----------Modified Code for Dragons!---------------*/
-        
+	if(C_29EF(tile_west)) {
 		w_SlowProgress();
 		return 1;
 	}
@@ -655,7 +591,7 @@ C_2D44()
 
 /*C_2DA9*/CMDDIR_Left()
 {
-    if(Party._tile == TIL_18) {
+	if(Party._tile == TIL_18) {
 		w_DriftOnly();
 	} else if(Party._tile == TIL_ShipS_13 || Party._tile == TIL_ShipE_12 || Party._tile == TIL_ShipN_11) {
 		Party._tile = TIL_ShipW_10;
@@ -674,17 +610,8 @@ C_2D44()
         
 		if(Party._tile == TIL_HorseE_15)
 			Party._tile = TIL_HorseW_14;
-        
-        /*-----------Modified Code for Dragons!---------------*/
-        if(DoublePace && Party.f_1dc == 1){
-            u4_puts("Fly West!\n");
-        } else {
 		sound(0);
 		u4_puts("West\n");
-        }
-        /*-----------Modified Code for Dragons!---------------*/
-
-        
 		if(C_2D44() && DoublePace) {
 			t_callback();
 			sound(0);
@@ -696,18 +623,11 @@ C_2D44()
 /*move East*/
 C_2E4F()
 {
-    /*-----------Modified Code for Dragons!---------------*/
-	if(!C_2999(tile_east) && Party.f_1dc != 1) {
-    /*-----------Modified Code for Dragons!---------------*/
-        
+	if(!C_2999(tile_east)) {
 		w_Blocked();
 		return 0;
 	}
-    
-    /*-----------Modified Code for Dragons!---------------*/
-	if(C_29EF(tile_east) && Party.f_1dc != 1) {
-    /*-----------Modified Code for Dragons!---------------*/
-        
+	if(C_29EF(tile_east)) {
 		w_SlowProgress();
 		return 1;
 	}
@@ -732,7 +652,7 @@ C_2E4F()
 
 /*C_2EC5*/CMDDIR_Right()
 {
-    if(Party._tile == TIL_18) {
+	if(Party._tile == TIL_18) {
 		w_DriftOnly();
 	} else if(Party._tile == TIL_ShipS_13 || Party._tile == TIL_ShipW_10 || Party._tile == TIL_ShipN_11) {
 		Party._tile = TIL_ShipE_12;
@@ -753,17 +673,8 @@ C_2E4F()
 
 		if(Party._tile == TIL_HorseW_14)
 			Party._tile = TIL_HorseE_15;
-        
-        /*-----------Modified Code for Dragons!---------------*/
-        if(DoublePace && Party.f_1dc == 1){
-            u4_puts("Fly East!\n");
-        } else {
 		sound(0);
 		u4_puts("East\n");
-        }
-        /*-----------Modified Code for Dragons!---------------*/
-
-        
 		if(C_2E4F() && DoublePace) {
 			t_callback();
 			sound(0);

@@ -337,23 +337,11 @@ C_7FFD()
 	}
 	for(loc_B = 15; loc_B >= 0; loc_B--) {
 /*C_817D*/
-        
-        /*modified to make 3 sprite NPCs work by making dungeon numbers match the shape number */
 		if(loc_A._010/*bug?*/) {
 		/*shouldn't be "if(loc_A._010[loc_B]) {" ?*/
-        /*modified to make 3 sprite NPCs work by making dungeon numbers match the shape number */
-            
 			Combat._npcX[loc_B] = loc_A._020[loc_B];
 			Combat._npcY[loc_B] = loc_A._030[loc_B];
-            
-            if(loc_A._010[loc_B] >= 0x90) {
-            /*modified to make 3 sprite NPCs work by making dungeon numbers match the shape number */
-			Fighters._tile[loc_B] = Fighters._gtile[loc_B] = ((((loc_A._010[loc_B] - 144)/4) * 3) + 144);
-            /*modified to make 3 sprite NPCs work by making dungeon numbers match the shape number */
-            } else {
-            Fighters._tile[loc_B] = Fighters._gtile[loc_B] = loc_A._010[loc_B];
-            }
-                
+			Fighters._tile[loc_B] = Fighters._gtile[loc_B] = loc_A._010[loc_B];
 			loc_C = Enemy_HP[C_7C25(loc_A._010[loc_B])];
 			Fighters._HP[loc_B] = (loc_C >> 1) | U4_RND4(loc_C);
 			if(Fighters._tile[loc_B] == (char)TIL_AC)
@@ -399,10 +387,6 @@ C_8283()
 		D_8742._npc._x[si] = D_9772;
 		D_8742._npc._y[si] = D_9140;
 		D_8742._npc._tile[si] = D_8742._npc._gtile[si] = TIL_ShipW_10;
-        /*-----------Added Code for Dragons!---------------*/
-        D_8742._npc._tlkidx[si] = 50;
-        /*-----------Added Code for Dragons!---------------*/
-
 	} else
 	if(D_95CC == MOD_DUNGEON) {
 		/*monster leaves chest?*/

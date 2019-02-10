@@ -20,8 +20,7 @@ C_C454(bp06, bp04)
 char *bp06;
 char *bp04;
 {
-    /*edited out to save code space */
-	/*int bp_02;
+	int bp_02;
 
 	if(!C_182F(bp04)) {
 		CurMode = MOD_VISION;
@@ -30,10 +29,10 @@ char *bp04;
 		u4_puts(bp06);
 		txt_Y ++;
 		txt_X = 18;
-		u4_puts("and");
+		u4_puts(/*D_3024*/"and");
 		txt_Y ++;
 		txt_X = 11;
-		u4_puts("press drive letter");
+		u4_puts(/*D_3028*/"press drive letter");
 		while(!u_kbhit());
 		do {
 			bp_02 = (unsigned char)u_kbread();
@@ -49,7 +48,7 @@ char *bp04;
 			sound(1);
 			while(!u_kbhit());
 		} while(1);
-	}*/
+	}
 }
 
 #define NPARAM (far_psp->_80[0])
@@ -60,10 +59,10 @@ C_C51C()
 {
 	int bp_02, bp_04;
 
-	/*u4_toupper(PARAM1);
-	u4_toupper(PARAM0);*/
+	u4_toupper(PARAM1);
+	u4_toupper(PARAM0);
 	/*set drive number*/
-	/*if(NPARAM < 4) {
+	if(NPARAM < 4) {
 		D_9138 = ((equip_flags & 0xc0) >> 6)?1:0;
 		PARAM1 = D_9138 + '0';
 	} else if (PARAM1 == '0') {
@@ -72,9 +71,9 @@ C_C51C()
 		D_9138 = 1;
 	} else {
 		D_9138 = ((equip_flags & 0xc0) >> 6)?1:0;
-	}*/
+	}
 	/*set graphic type*/
-	/*if(NPARAM < 2) {
+	if(NPARAM < 2) {
 		D_943A = low_gra();
 	} else if(PARAM0 == 'C') {
 		D_943A = 1;
@@ -84,10 +83,7 @@ C_C51C()
 		D_943A = 3;
 	} else {
 		D_943A = low_gra();
-	}*/
-    D_9138 = 0; /*cut out from above */
-    D_943A = 2; /*cut out from above */
-
+	}
 	/* */
 	pShapes = dalloc((D_943A == 1)?0x4000:0x8000);
 	pCharset = dalloc((D_943A == 1)?0x0800:0x1000);
@@ -100,27 +96,25 @@ C_C51C()
 			exit(3);
     }
 	bp_02 = C_1814();
-	/*switch(D_943A) {
+	switch(D_943A) {
 		case 1:
 			dfree(patch_tandy);
 			patch_tandy = 0;
-			C_20C1("CGA.DRV");
+			C_20C1(/*D_305E*/"CGA.DRV");
 		break;
 		case 2:
 			dfree(patch_tandy);
 			patch_tandy = 0;
-			C_20C1("EGA.DRV");
+			C_20C1(/*D_3066*/"EGA.DRV");
 		break;
 		case 3:
-			C_20C1("TANDY.DRV");
+			C_20C1(/*D_306E*/"TANDY.DRV");
 		break;
 		case -1:
-			Console("I can't find a color graphics card.\r\n");
+			Console(/*D_3078*/"I can't find a color graphics card.\r\n");
 			exit(2);
 		break;
-	}*/
-    C_20C1(/*D_3066*/"EGA.DRV"); /*cut out from above */
-    
+	}
 	bp_04 = C_184F();/*piracy check function ?*/
 	Gra_init(&pShapes, &pCharset, exit);
 	if(D_943A == 2)
@@ -129,32 +123,26 @@ C_C51C()
 	if(D_943A == 1)
 		speed_info ++;
 	Gra_clrscr();
-	/*if(PARAM1 >= (char)'A' && PARAM1 <= (char)'P') {
+	if(PARAM1 >= (char)'A' && PARAM1 <= (char)'P') {
 		if(C_1814() == (PARAM1 & 0x0f)) {
-			C_C454("Re-Insert PLAYER Disk", "WORLD.MAP");
+			C_C454(/*D_30A8*/"Re-Insert PLAYER Disk", /*D_309E*/"WORLD.MAP");
 		} else {
 			C_181D((unsigned char)PARAM1 & 0x0f);
 		}
-	}*/
-    C_181D((unsigned char)PARAM1 & 0x0f);  /*cut out from above */
-
-    
-	/*C_C454("Insert PLAYER disk", "WORLD.MAP");*/
-    
+	}
+	C_C454(/*D_30C8*/"Insert PLAYER disk", /*D_30BE*/"WORLD.MAP");
 	if(D_943A != 1) {
-		if(Load("SHAPES.EGA", 0x8000, pShapes) == -1)
+		if(Load(/*D_30DB*/"SHAPES.EGA", 0x8000, pShapes) == -1)
 			exit(3);
 	}
 	if(D_943A == 2)
 		sizzleShapes();
 	if(Load(/*D_30E6*/"PARTY.SAV", sizeof(struct tParty), &Party) == -1)
 		exit(3);
-    
 #if 0/*def WIN32*/
 	/*for debug*/
 	Party._x = 0x5b; Party._y = 0x44;
 #endif
-    
 	if(Party._members == 0) {
 		Gra_clrscr();
 		txt_Y = 8;
@@ -163,24 +151,23 @@ C_C51C()
 		sound(8);
 		u_delay(3, 0);
 		u_kbflush();
-		/*if(bp_02 == C_1814()) {
-			C_C454("Re-Insert PROGRAM Disk", "TITLE.EXE");
+		if(bp_02 == C_1814()) {
+			C_C454(/*D_310B*/"Re-Insert PROGRAM Disk", /*D_3010*/"TITLE.EXE");
 		} else {
 			C_181D(bp_02);
-			C_C454("Insert PROGRAM disk", "TITLE.EXE");
-		}*/
+			C_C454(/*D_312C*/"Insert PROGRAM disk", /*D_3122*/"TITLE.EXE");
+		}
 		low_clean();
 		exit(4);
 	}
 	if(Load(/*D_3140*/"MONSTERS.SAV", sizeof(struct tNPC), &(D_8742._npc)) == -1)
 		exit(3);
-	if((File_MAP = dopen("WORLD.MAP", 0)) == -1) {
-		Console("Can't open map file\r\n");
+	if((File_MAP = dopen(/*D_314D*/"WORLD.MAP", 0)) == -1) {
+		Console(/*D_3157*/"Can't open map file\r\n");
 		exit(3);
 	}
 	File_TLK = 0;
     File_TLK_2 = 0;
-    File_TLK_B = 0;
     File_TLK_Buff = 0;
 	D_9445 = D_0814[(((Party._trammel >> 5)) & 7)];
 	D_9448 = D_081C[(((Party._felucca >> 5)) & 7)];
@@ -190,13 +177,6 @@ C_C51C()
 	spell_cnt = 0;
 	D_9440 = (Party.f_1dc == 0);/*flying status*/
 	DoublePace = 0;
-    
-    /*-----------Added Code for Dragons!------------------------*/
-    /*--Makes sure flying dragons are restored to doublepace----*/
-    if(Party.f_1dc == 1)
-        DoublePace = 1;
-    /*-----------Added Code for Dragons!------------------------*/
-
     HorseTown = 0;
 	CurMode = MOD_OUTDOORS;
 	WindDir = DIR_N;
@@ -216,12 +196,4 @@ Restore_Crypt() {
     D_8742._npc._y[si] = D_8742._npc._var[si + 12];
     }
     }
-    
-    /*-----------Modified Code for Dragons!---------------*/
-    /*-----Added to add a dragon on load for testing------*/
-    /*D_8742._npc._gtile[21] = D_8742._npc._tile[21] = TIL_Dragon1;
-    D_8742._npc._x[21] = Party._x + 1;
-    D_8742._npc._y[21] = Party._y - 1;*/
-    /*-----------Modified Code for Dragons!---------------*/
-    
 }

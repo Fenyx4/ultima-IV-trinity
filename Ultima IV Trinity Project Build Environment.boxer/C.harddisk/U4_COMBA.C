@@ -412,12 +412,7 @@ C_61D1()
 		(loc_C = C_0A8B(Party._x + loc_A, Party._y + loc_B)) == -1 ||
 		D_8742._npc._tile[loc_C] == TIL_8C ||
 		D_8742._npc._tile[loc_C] == TIL_SWater_02 ||
-		D_8742._npc._tile[loc_C] == TIL_8E ||
-       
-       /* prevents avatar from attacking the inanimate object NPCs, added for 3 sprite NPCs */
-        D_8742._npc._tile[loc_C] >= TIL_Fireplace_1
-       /* prevents avatar from attacking the inanimate object NPCs, added for 3 sprite NPCs */
-
+		D_8742._npc._tile[loc_C] == TIL_8E
 	) {
 		u4_puts(/*D_2077*/"Nothing to Attack!\n");
 		return;
