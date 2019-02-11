@@ -497,7 +497,7 @@ CMD_Board()
     
 	u4_puts("Board ");
 	if(tile_cur == TIL_18) {
-		EXP_Mount(TIL_18);
+		EXP_Mount(tile_cur);
 		u4_puts("Balloon!\n");
 		Party.f_1dc = 0;
 		return;
