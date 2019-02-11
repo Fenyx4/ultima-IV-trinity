@@ -220,6 +220,7 @@ unsigned char bp04;
 	}
 }
 
+/*modified to allow for 3 sprite NPCs */
 C_AD6A(bp06, bp04)
 unsigned char bp06;
 int bp04;
@@ -230,10 +231,18 @@ int bp04;
 	STA_E = bp04;
 	if(D_2DEE-- == 0) {
 		D_2DEE = speed_info - 1;
-		D_8CFA = U4_RND1(3);
+        
+        /*modified Here for 3 sprite NPCs, from 4 to 3*/
+		D_8CFA = U4_RND4(3);
+        /*modified Here for 3 sprite NPCs, from 4 to 3*/
+        
 	}
 	if(C_ABE5(bp06)) {
-		C_AC23(TIL_90 + ((bp06 & 0xf) << 2) - 4 + D_8CFA);
+        
+        /*modified here for 3 sprite NPCs, to only include the random number*/
+		C_AC23(TIL_90 + D_8CFA);
+        /*modified here for 3 sprite NPCs, to only include the random number*/
+        
 		return 0;
 	}
 	if((bp_02 = C_AB08(bp06)) > 0) {

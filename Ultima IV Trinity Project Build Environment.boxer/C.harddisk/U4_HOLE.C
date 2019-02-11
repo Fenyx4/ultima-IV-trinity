@@ -39,7 +39,12 @@ Ambush()
 		w_NotHere();
 		return;
 	}
-    if(Party._tile == TIL_HorseW_14 || Party._tile == TIL_HorseE_15 || Party._tile == TIL_18) {
+    
+    /*-----------Modified Code for Dragons!---------------*/
+    /*--Prevents holing an camping when mountd on dragon--*/
+    if(Party._tile == TIL_HorseW_14 || Party._tile == TIL_HorseE_15 || Party._tile == TIL_18 || (Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4)) {
+    /*-----------Modified Code for Dragons!---------------*/
+        
         w_OnlyOnFoot();
         return;
     }

@@ -58,7 +58,11 @@ Random_Encounter()
         Death_Revive();
         return;
     }*/
-    if(CurMode == MOD_OUTDOORS && (Party._tile >= TIL_HorseW_14 && Party._tile != TIL_18) && (tile_cur == TIL_00 || tile_cur == TIL_MWater_01 || tile_cur == TIL_SWater_02)) {
+    
+    /*-----------Modified Code for Dragons!---------------*/
+    if(Party.f_1dc != 1 && CurMode == MOD_OUTDOORS && (Party._tile >= TIL_HorseW_14 && Party._tile != TIL_18) && (tile_cur == TIL_00 || tile_cur == TIL_MWater_01 || tile_cur == TIL_SWater_02)) {
+    /*-----------Modified Code for Dragons!---------------*/
+        
         u4_puts("\nWater!\n\n");
         sound(6); shakefx();
         Gra_09();
@@ -90,7 +94,9 @@ Random_Encounter()
 					dspl_Stats();
 				}
 			break;
-			case TIL_46: case TIL_4C:
+                /* added fireplace cases */
+            case TIL_46: case TIL_4C: case TIL_Fireplace_1: case TIL_Fireplace_2: case TIL_Fireplace_3:
+                /* added fireplace cases */
 				sleep_poisonfx(activeChara);
 				bp_02 = U4_RND3(32) + 16;
 				hitChara(activeChara, bp_02);
@@ -118,7 +124,9 @@ Random_Encounter()
 	}
 	switch(tile_cur) {
 		case TIL_Swamp_03: case TIL_44: Poison(); break;
-		case TIL_46: case TIL_4C: Party_Damage(15); break;
+            /* added fireplace cases */
+		case TIL_46: case TIL_4C: case TIL_Fireplace_1: case TIL_Fireplace_2: case TIL_Fireplace_3: Party_Damage(15); break;
+            /* added fireplace cases */
 		case TIL_47: Sleep(); break;
 	}
 }

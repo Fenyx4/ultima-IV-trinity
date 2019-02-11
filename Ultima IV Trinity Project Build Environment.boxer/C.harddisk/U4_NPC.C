@@ -377,7 +377,12 @@ NPC_Move_Out()
 		/* */
 		if(loc_H != TIL_8C && loc_H != TIL_8E) {
 			loc_G = C_535B(loc_F, &loc_A, &loc_B, &loc_C, &loc_D);
-			if(loc_G < 2) {
+            
+            /*-----------Modifed Code for Dragons!---------------*/
+            /*--Makes only non-flying things able to be attacked-*/
+            if(loc_G < 2 && Party.f_1dc != 1) {
+            /*-----------Modified Code for Dragons!---------------*/
+
 				/*-- attacked by --*/
 				t_callback();
 				u4_puts(D_1FD8); u4_puts(C_1513(loc_H));
@@ -497,9 +502,11 @@ C_5851()
                 }
                 }
                 }
+                
+                /*modified to * 3 from * 4, to make 3 sprite NPCs work right */
 				D_8742._npc._tile[si] =
 				D_8742._npc._gtile[si] =
-					U4_RND1(U4_RND1(bp_0a)) * 4 + TIL_C0;
+					U4_RND1(U4_RND1(bp_0a)) * 3 + TIL_C0;
 			}
 		}
 	}

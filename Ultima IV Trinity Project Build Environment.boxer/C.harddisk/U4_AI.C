@@ -62,7 +62,11 @@ C_9414()
 						break;
 				}
 				if(loc_D != -1) {
+                    
+                    /* modified here from 4 to 3 for 3 sprite NPCs */
 					D_8742._map.x8x8x8[Party._z][loc_F][loc_E] |= (D_8742._npc._tile[loc_B] - TIL_90) / 4 + 1;
+                    /* modified here from 4 to 3 for 3 sprite NPCs */
+
 					D_8742._map.x8x8x8[Party._z][D_8742._npc._y[loc_B]][D_8742._npc._x[loc_B]] &= 0xf0;
 					D_8742._npc._old_x[loc_B] = D_8742._npc._x[loc_B];
 					D_8742._npc._old_y[loc_B] = D_8742._npc._y[loc_B];
@@ -88,7 +92,11 @@ C_95AA()
 			loc_D = U4_RND1(7);
 			if(Party._x != loc_B && Party._y != loc_D) {
 				if(D_8742._map.x8x8x8[Party._z][loc_D][loc_B] == 0) {
+                    
+                    /* modified here from 4 to 3 for 3 sprite NPCs */
 					loc_C = (U4_RND1(3) + Party._z) * 4 + TIL_90;
+                    /* modified here from 4 to 3 for 3 sprite NPCs */
+                    
 					if(loc_C != TIL_AC) {
 						D_8742._npc._tile[loc_A] = loc_C;
 						D_8742._npc._x[loc_A] = D_8742._npc._old_x[loc_A] = loc_B;
@@ -125,7 +133,9 @@ int bp04;
 	hit_tile = 0;
 	C_3C54();
 	bp_02 = U4_RND4(Enemy_HP[C_7C25((unsigned char)Fighters._tile[bp04])] >> 2);
-	bp_02 = (bp_02 >> 4) * 10 + (bp_02 % 10);
+    
+    /*doubled damage to reflect apple II levels. Dos verseion too EASY */
+	bp_02 = ((bp_02 >> 4) * 10 + (bp_02 % 10)) * 2;
 	Gra_11(bp06);
 	if(hitChara(bp06, bp_02) == 0) {
 		dspl_Stats();
