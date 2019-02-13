@@ -1,6 +1,6 @@
 MAKE  Version 2.0   Copyright (c) 1987, 1988 Borland International
 
-Available memory 596500 bytes
+Available memory 597428 bytes
 
 	msc /Gs /Osa /Zp /Gc u4_explo,ex;
 	link /MAP @u4.rsp

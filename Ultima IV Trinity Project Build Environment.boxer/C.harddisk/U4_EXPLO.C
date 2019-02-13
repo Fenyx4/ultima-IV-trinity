@@ -404,6 +404,10 @@ CMD_Enter()
             u4_puts("hamlet!\n\n");
             Enter_Towne();
         break;
+        case TIL_Tower:
+            u4_puts("tower!\n\n");
+            Enter_Towne();
+            break;
         case TIL_Village_0C:
             u4_puts("village!\n\n");
             Enter_Towne();
