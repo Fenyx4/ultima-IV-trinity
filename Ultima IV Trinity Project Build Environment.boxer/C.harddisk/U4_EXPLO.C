@@ -83,7 +83,47 @@ char *Talk_Files_2[] ={
     /*D_16D9*/"MINOC2.TLK",
     /*D_16E3*/"TRINSIC2.TLK",
     /*D_16EF*/"SKARA2.TLK",
-    /*D_16F9*/"MAGINCI2.TLK"
+    /*D_16F9*/"MAGINCI2.TLK",
+    /*Villages*/
+    /*D_1706*/"PAWS.TLK",
+    /*D_170F*/"DEN.TLK",
+    /*D_1717*/"VESPER.TLK",
+    /*D_1722*/"COVE.TLK",
+    /*Dungeons - added to give correct spacing when referencing new locatons*/
+    /*0xF0 0x49*/"D",
+    /*D_07A8*/"D",
+    /*D_07B4*/"D",
+    /*D_07C0*/"W",
+    /*D_07CA*/"C",
+    /*D_07D7*/"S",
+    /*D_07E1*/"H",
+    /*D_07EE*/"A",
+    /*Shrines*/
+    /*D_076D*/"B",
+    /*D_0772*/"Y",
+    /*D_0779*/"R",
+    /*D_077D*/"G",
+    /*D_0783*/"O",
+    /*D_078A*/"P",
+    /*D_0791*/"W",
+    /*D_0797*/"B",
+    /*Camps*/
+    /*D_16C6*/"RIVERCA.TLK",
+    /*D_16D1*/"FORESTCA.TLK",
+    /*D_16C6*/"MOUNTCA.TLK",
+    /*D_16D1*/"SWAMPCA.TLK",
+    /*D_16C6*/"PLAINSC2.TLK",
+    /*D_16D1*/"VALLEYCA.TLK",
+    /*D_16C6*/"FARMCA.TLK",
+    /*D_16D1*/"VALLEYCA.TLK",
+    /*Crypts*/
+    /*D_07EE*/"M",
+    /*D_07EE*/"M",
+    /*D_07EE*/"E",
+    /*Oracle*/
+    /*D_07EE*/"L",
+    /*D_07EE*/"C",
+    /*D_07EE*/"T"
 };
 
 char *Talk_Files_B[] ={
@@ -100,7 +140,47 @@ char *Talk_Files_B[] ={
     /*D_16D9*/"MINOCB.TLK",
     /*D_16E3*/"TRINSICB.TLK",
     /*D_16EF*/"SKARAB.TLK",
-    /*D_16F9*/"MAGINCIB.TLK"
+    /*D_16F9*/"MAGINCIB.TLK",
+    /*Villages*/
+    /*D_1706*/"PAWS.TLK",
+    /*D_170F*/"DEN.TLK",
+    /*D_1717*/"VESPER.TLK",
+    /*D_1722*/"COVE.TLK",
+    /*Dungeons - added to give correct spacing when referencing new locatons*/
+    /*0xF0 0x49*/"D",
+    /*D_07A8*/"D",
+    /*D_07B4*/"D",
+    /*D_07C0*/"W",
+    /*D_07CA*/"C",
+    /*D_07D7*/"S",
+    /*D_07E1*/"H",
+    /*D_07EE*/"A",
+    /*Shrines*/
+    /*D_076D*/"B",
+    /*D_0772*/"Y",
+    /*D_0779*/"R",
+    /*D_077D*/"G",
+    /*D_0783*/"O",
+    /*D_078A*/"P",
+    /*D_0791*/"W",
+    /*D_0797*/"B",
+    /*Camps*/
+    /*D_16C6*/"RIVERCA.TLK",
+    /*D_16D1*/"FORESTCA.TLK",
+    /*D_16C6*/"MOUNTCA.TLK",
+    /*D_16D1*/"SWAMPCA.TLK",
+    /*D_16C6*/"PLAINSCB.TLK",
+    /*D_16D1*/"VALLEYCA.TLK",
+    /*D_16C6*/"FARMCA.TLK",
+    /*D_16D1*/"VALLEYCA.TLK",
+    /*Crypts*/
+    /*D_07EE*/"M",
+    /*D_07EE*/"M",
+    /*D_07EE*/"E",
+    /*Oracle*/
+    /*D_07EE*/"L",
+    /*D_07EE*/"C",
+    /*D_07EE*/"T"
 };
 
 

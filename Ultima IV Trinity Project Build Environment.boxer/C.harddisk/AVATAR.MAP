@@ -4,38 +4,38 @@
  00000H 0FF65H 0FF66H _TEXT                  CODE
  0FF66H 0FF66H 00000H C_ETEXT                ENDCODE
  0FF70H 0FFA5H 00036H NULL                   BEGDATA
- 0FFA6H 1A42BH 0A486H _DATA                  DATA
- 1A42CH 1A439H 0000EH CDATA                  DATA
- 1A43AH 1A43AH 00000H XIB                    DATA
- 1A43AH 1A43AH 00000H XI                     DATA
- 1A43AH 1A43AH 00000H XIE                    DATA
- 1A43AH 1A43AH 00000H XPB                    DATA
- 1A43AH 1A43AH 00000H XP                     DATA
- 1A43AH 1A43AH 00000H XPE                    DATA
- 1A43AH 1A43AH 00000H XCB                    DATA
- 1A43AH 1A43AH 00000H XC                     DATA
- 1A43AH 1A43AH 00000H XCE                    DATA
- 1A43AH 1A43AH 00000H CONST                  CONST
- 1A43AH 1A441H 00008H HDR                    MSG
- 1A442H 1A512H 000D1H MSG                    MSG
- 1A513H 1A514H 00002H PAD                    MSG
- 1A515H 1A515H 00001H EPAD                   MSG
- 1A516H 1A516H 00000H XOB                    BSS
- 1A516H 1A516H 00000H XO                     BSS
- 1A516H 1A516H 00000H XOE                    BSS
- 1A520H 1AB5DH 0063EH C_COMMON               BSS
- 1AB5EH 1B57DH 00A20H _BSS                   BSS
- 1B580H 1BD7FH 00800H STACK                  STACK
+ 0FFA6H 1A61BH 0A676H _DATA                  DATA
+ 1A61CH 1A629H 0000EH CDATA                  DATA
+ 1A62AH 1A62AH 00000H XIB                    DATA
+ 1A62AH 1A62AH 00000H XI                     DATA
+ 1A62AH 1A62AH 00000H XIE                    DATA
+ 1A62AH 1A62AH 00000H XPB                    DATA
+ 1A62AH 1A62AH 00000H XP                     DATA
+ 1A62AH 1A62AH 00000H XPE                    DATA
+ 1A62AH 1A62AH 00000H XCB                    DATA
+ 1A62AH 1A62AH 00000H XC                     DATA
+ 1A62AH 1A62AH 00000H XCE                    DATA
+ 1A62AH 1A62AH 00000H CONST                  CONST
+ 1A62AH 1A631H 00008H HDR                    MSG
+ 1A632H 1A702H 000D1H MSG                    MSG
+ 1A703H 1A704H 00002H PAD                    MSG
+ 1A705H 1A705H 00001H EPAD                   MSG
+ 1A706H 1A706H 00000H XOB                    BSS
+ 1A706H 1A706H 00000H XO                     BSS
+ 1A706H 1A706H 00000H XOE                    BSS
+ 1A710H 1AD4DH 0063EH C_COMMON               BSS
+ 1AD4EH 1B76DH 00A20H _BSS                   BSS
+ 1B770H 1BF6FH 00800H STACK                  STACK
 
  Origin   Group
  0FF7:0   DGROUP
 
   Address         Publics by Name
 
- 0FF7:AA0B       activeChara
+ 0FF7:ABFB       activeChara
  0FF7:1178       ACTIVECHARAX
- 0FF7:AA1F       activeCharaY
- 0FF7:A8AE       Altar
+ 0FF7:AC0F       activeCharaY
+ 0FF7:AA9E       Altar
  0000:9664       AMBUSH
  0000:439C       ANI_BALLOON
  0000:3CF2       ANI_FIELDS
@@ -45,7 +45,7 @@
  0000:4085       ANI_RAYCAST
  0000:3DD4       ANI_SPRITES
  0000:3DCF       ANI_WIND
- 0FF7:3564       ARMOR_PROT
+ 0FF7:3754       ARMOR_PROT
  0000:16CD       ASKCHARA
  0000:171C       ASKDIR
  0000:1B82       ASKINT
@@ -55,8 +55,8 @@
  0000:0973       BIG_KARMA_INC
  0000:093F       BIG_SHAKE
  0000:A8FD       CHECKJINX
- 0FF7:3434       CLASS_MSK
- 0FF7:AA0D       closeCrypt
+ 0FF7:3624       CLASS_MSK
+ 0FF7:ABFD       closeCrypt
  0000:33D6       CMDDIR_DOWN
  0000:3576       CMDDIR_LEFT
  0000:36B7       CMDDIR_RIGHT
@@ -87,8 +87,8 @@
  0000:4A55       CMD_X_IT
  0000:4C9F       CMD_YELL
  0000:5957       CMD_ZTATS
- 0FF7:A8E1       Combat
- 0FF7:3616       COMBAT_MAPS
+ 0FF7:AAD1       Combat
+ 0FF7:3806       COMBAT_MAPS
  0000:6A23       COM_CHECKHITABLE
  0000:692C       COM_DODAMAGE
  0000:6577       COM_GETFIGHTERID
@@ -98,7 +98,7 @@
  0FF7:13FA       CRYPTS
  0000:2DBE       CRYPT_CLOSE
  0000:2D3F       CRYPT_EXIT
- 0FF7:A8DB       CurMode
+ 0FF7:AACB       CurMode
  0FF7:0906       cursor_rate
  0000:01E1       C_01E1
  0000:044C       C_044C
@@ -330,11 +330,11 @@
  0000:9C2B       C_WHIT
  0000:1287       DEATH_REVIVE
  0000:90F2       DNG_MAIN
- 0FF7:3FD4       DOOR_Y0
- 0FF7:3FD8       DOOR_Y0P
- 0FF7:3FDC       DOOR_Y1
- 0FF7:3FE0       DOOR_Y1P
- 0FF7:AA39       DoublePace
+ 0FF7:41C4       DOOR_Y0
+ 0FF7:41C8       DOOR_Y0P
+ 0FF7:41CC       DOOR_Y1
+ 0FF7:41D0       DOOR_Y1P
+ 0FF7:AC29       DoublePace
  0000:6A9F       DRAWBLOW
  0000:11E4       DSPL_GOLD
  0000:10B9       DSPL_STATS
@@ -367,151 +367,151 @@
  0FF7:22C4       D_1668
  0FF7:22C6       D_166A
  0FF7:22C8       D_166C
- 0FF7:26A0       D_17FA
- 0FF7:26A2       D_17FC
- 0FF7:26A4       D_17FE
- 0FF7:283C       D_199A
- 0FF7:2846       D_19A4
- 0FF7:2862       D_19C0
- 0FF7:30D0       D_1FD8
- 0FF7:3184       D_208C
- 0FF7:3266       D_216E
- 0FF7:32EC       D_21F4
- 0FF7:33C8       D_22C8
- 0FF7:3508       D_2406
- 0FF7:352C       D_242A
- 0FF7:3672       D_256E
- 0FF7:3692       D_258E
- 0FF7:3744       D_261A
- 0FF7:38C4       D_277E
- 0FF7:38EC       D_27A6
- 0FF7:3A36       D_2904
- 0FF7:3A52       D_2920
- 0FF7:3BF2       D_2A7A
- 0FF7:3C08       D_2A90
- 0FF7:3D2A       D_2BB2
- 0FF7:3E4C       D_2CD4
- 0FF7:3F8C       D_2D54
- 0FF7:3FE4       D_2DAC
- 0FF7:3FE8       D_2DB0
- 0FF7:3FEC       D_2DB4
- 0FF7:3FF0       D_2DB8
- 0FF7:3FF4       D_2DBC
- 0FF7:3FF8       D_2DC0
- 0FF7:3FFC       D_2DC4
- 0FF7:4000       D_2DC8
- 0FF7:400C       D_2DD4
- 0FF7:4010       D_2DD8
- 0FF7:4014       D_2DDC
- 0FF7:4018       D_2DE0
- 0FF7:401C       D_2DE4
- 0FF7:4020       D_2DE8
- 0FF7:4024       D_2DEC
- 0FF7:4026       D_2DEE
- 0FF7:403C       D_2E04
- 0FF7:40A6       D_2E6E
- 0FF7:40B6       D_2E7E
- 0FF7:41AA       D_2F72
- 0FF7:42AA       D_2FF2
- 0FF7:50F8       D_3F0C
- 0FF7:5388       D_4170
- 0FF7:53B0       D_4180
- 0FF7:53BC       D_4188
- 0FF7:53C8       D_4190
- 0FF7:58E6       D_46A2
- 0FF7:58F2       D_46AE
- 0FF7:58FE       D_46BA
- 0FF7:5916       D_46D2
- 0FF7:5938       D_46F2
- 0FF7:5948       D_4702
- 0FF7:5E02       D_4BAE
- 0FF7:5E0E       D_4BB8
- 0FF7:5E1A       D_4BC4
- 0FF7:5E36       D_4BDC
- 0FF7:5E46       D_4BEC
- 0FF7:5E6E       D_4BFC
- 0FF7:642A       D_5196
- 0FF7:6452       D_51A6
- 0FF7:645A       D_51AE
- 0FF7:6462       D_51B6
- 0FF7:6468       D_51BA
- 0FF7:646E       D_51BE
- 0FF7:6734       D_5484
- 0FF7:6744       D_5494
- 0FF7:674C       D_549C
- 0FF7:6754       D_54A4
- 0FF7:675C       D_54AC
- 0FF7:676A       D_54BA
- 0FF7:6778       D_54C8
- 0FF7:6922       D_5672
- 0FF7:6926       D_5676
- 0FF7:692A       D_567A
- 0FF7:6A52       D_5788
- 0FF7:6A7A       D_5798
- 0FF7:6A90       D_57AC
- 0FF7:71F0       D_5EE8
- 0FF7:7218       D_5EF8
- 0FF7:7226       D_5F04
- 0FF7:7234       D_5F10
- 0FF7:7242       D_5F1C
- 0FF7:7250       D_5F28
- 0FF7:725E       D_5F34
- 0FF7:726C       D_5F42
- 0FF7:76C4       D_636C
- 0FF7:76EC       D_637C
- 0FF7:76FA       D_6386
- 0FF7:7708       D_6390
- 0FF7:8484       D_6FF0
- 0FF7:84C4       D_7028
- 0FF7:9FD4       D_8362
- 0FF7:AC10       D_8742
- 0FF7:A5B0       D_9140
- 0FF7:A5B1       D_9141
- 0FF7:A5B2       D_9142
- 0FF7:A7AA       D_933A
- 0FF7:A8AA       D_943A
- 0FF7:A8B2       D_9440
- 0FF7:A8B6       D_9445
- 0FF7:A8B7       D_9446
- 0FF7:A8B9       D_9448
- 0FF7:A8BB       D_944A
- 0FF7:A8C3       D_9452
- 0FF7:A8C9       D_9458
- 0FF7:A8DD       D_946C
- 0FF7:AA0F       D_959C
- 0FF7:AA18       D_95A5
- 0FF7:AA25       D_95B2
- 0FF7:AA3D       D_95C8
- 0FF7:AA41       D_95CC
- 0FF7:AA43       D_95CE
- 0FF7:AB63       D_96EE
- 0FF7:AB69       D_96F4
- 0FF7:AB73       D_96F8
- 0FF7:AB74       D_96F9
- 0FF7:ABED       D_9772
- 0FF7:2F8A       D_ARMORS
- 0FF7:308A       D_ASSORTED
- 0FF7:2FBA       D_CLASSES
- 0FF7:2F30       D_CREA
- 0FF7:3092       D_INCANTATIONS
- 0FF7:30B2       D_ITEMS
- 0FF7:37E2       D_LAAM
- 0FF7:301E       D_LOCATIONS
- 0FF7:308C       D_PRINCIPLES
- 0FF7:2FDA       D_REAGENTS
- 0FF7:37EA       D_SEAM
- 0FF7:2F1E       D_SEA_CREA
- 0FF7:2FEA       D_SPELLS
- 0FF7:307A       D_VIRTUES
- 0FF7:2F68       D_WEAPONS
- 0FF7:2F9A       D_WEA_CODES
+ 0FF7:2890       D_17FA
+ 0FF7:2892       D_17FC
+ 0FF7:2894       D_17FE
+ 0FF7:2A2C       D_199A
+ 0FF7:2A36       D_19A4
+ 0FF7:2A52       D_19C0
+ 0FF7:32C0       D_1FD8
+ 0FF7:3374       D_208C
+ 0FF7:3456       D_216E
+ 0FF7:34DC       D_21F4
+ 0FF7:35B8       D_22C8
+ 0FF7:36F8       D_2406
+ 0FF7:371C       D_242A
+ 0FF7:3862       D_256E
+ 0FF7:3882       D_258E
+ 0FF7:3934       D_261A
+ 0FF7:3AB4       D_277E
+ 0FF7:3ADC       D_27A6
+ 0FF7:3C26       D_2904
+ 0FF7:3C42       D_2920
+ 0FF7:3DE2       D_2A7A
+ 0FF7:3DF8       D_2A90
+ 0FF7:3F1A       D_2BB2
+ 0FF7:403C       D_2CD4
+ 0FF7:417C       D_2D54
+ 0FF7:41D4       D_2DAC
+ 0FF7:41D8       D_2DB0
+ 0FF7:41DC       D_2DB4
+ 0FF7:41E0       D_2DB8
+ 0FF7:41E4       D_2DBC
+ 0FF7:41E8       D_2DC0
+ 0FF7:41EC       D_2DC4
+ 0FF7:41F0       D_2DC8
+ 0FF7:41FC       D_2DD4
+ 0FF7:4200       D_2DD8
+ 0FF7:4204       D_2DDC
+ 0FF7:4208       D_2DE0
+ 0FF7:420C       D_2DE4
+ 0FF7:4210       D_2DE8
+ 0FF7:4214       D_2DEC
+ 0FF7:4216       D_2DEE
+ 0FF7:422C       D_2E04
+ 0FF7:4296       D_2E6E
+ 0FF7:42A6       D_2E7E
+ 0FF7:439A       D_2F72
+ 0FF7:449A       D_2FF2
+ 0FF7:52E8       D_3F0C
+ 0FF7:5578       D_4170
+ 0FF7:55A0       D_4180
+ 0FF7:55AC       D_4188
+ 0FF7:55B8       D_4190
+ 0FF7:5AD6       D_46A2
+ 0FF7:5AE2       D_46AE
+ 0FF7:5AEE       D_46BA
+ 0FF7:5B06       D_46D2
+ 0FF7:5B28       D_46F2
+ 0FF7:5B38       D_4702
+ 0FF7:5FF2       D_4BAE
+ 0FF7:5FFE       D_4BB8
+ 0FF7:600A       D_4BC4
+ 0FF7:6026       D_4BDC
+ 0FF7:6036       D_4BEC
+ 0FF7:605E       D_4BFC
+ 0FF7:661A       D_5196
+ 0FF7:6642       D_51A6
+ 0FF7:664A       D_51AE
+ 0FF7:6652       D_51B6
+ 0FF7:6658       D_51BA
+ 0FF7:665E       D_51BE
+ 0FF7:6924       D_5484
+ 0FF7:6934       D_5494
+ 0FF7:693C       D_549C
+ 0FF7:6944       D_54A4
+ 0FF7:694C       D_54AC
+ 0FF7:695A       D_54BA
+ 0FF7:6968       D_54C8
+ 0FF7:6B12       D_5672
+ 0FF7:6B16       D_5676
+ 0FF7:6B1A       D_567A
+ 0FF7:6C42       D_5788
+ 0FF7:6C6A       D_5798
+ 0FF7:6C80       D_57AC
+ 0FF7:73E0       D_5EE8
+ 0FF7:7408       D_5EF8
+ 0FF7:7416       D_5F04
+ 0FF7:7424       D_5F10
+ 0FF7:7432       D_5F1C
+ 0FF7:7440       D_5F28
+ 0FF7:744E       D_5F34
+ 0FF7:745C       D_5F42
+ 0FF7:78B4       D_636C
+ 0FF7:78DC       D_637C
+ 0FF7:78EA       D_6386
+ 0FF7:78F8       D_6390
+ 0FF7:8674       D_6FF0
+ 0FF7:86B4       D_7028
+ 0FF7:A1C4       D_8362
+ 0FF7:AE00       D_8742
+ 0FF7:A7A0       D_9140
+ 0FF7:A7A1       D_9141
+ 0FF7:A7A2       D_9142
+ 0FF7:A99A       D_933A
+ 0FF7:AA9A       D_943A
+ 0FF7:AAA2       D_9440
+ 0FF7:AAA6       D_9445
+ 0FF7:AAA7       D_9446
+ 0FF7:AAA9       D_9448
+ 0FF7:AAAB       D_944A
+ 0FF7:AAB3       D_9452
+ 0FF7:AAB9       D_9458
+ 0FF7:AACD       D_946C
+ 0FF7:ABFF       D_959C
+ 0FF7:AC08       D_95A5
+ 0FF7:AC15       D_95B2
+ 0FF7:AC2D       D_95C8
+ 0FF7:AC31       D_95CC
+ 0FF7:AC33       D_95CE
+ 0FF7:AD53       D_96EE
+ 0FF7:AD59       D_96F4
+ 0FF7:AD63       D_96F8
+ 0FF7:AD64       D_96F9
+ 0FF7:ADDD       D_9772
+ 0FF7:317A       D_ARMORS
+ 0FF7:327A       D_ASSORTED
+ 0FF7:31AA       D_CLASSES
+ 0FF7:3120       D_CREA
+ 0FF7:3282       D_INCANTATIONS
+ 0FF7:32A2       D_ITEMS
+ 0FF7:39D2       D_LAAM
+ 0FF7:320E       D_LOCATIONS
+ 0FF7:327C       D_PRINCIPLES
+ 0FF7:31CA       D_REAGENTS
+ 0FF7:39DA       D_SEAM
+ 0FF7:310E       D_SEA_CREA
+ 0FF7:31DA       D_SPELLS
+ 0FF7:326A       D_VIRTUES
+ 0FF7:3158       D_WEAPONS
+ 0FF7:318A       D_WEA_CODES
  0000:E409       ENC_INN
- 0FF7:34D4       ENEMY_HP
+ 0FF7:36C4       ENEMY_HP
  0000:46FC       ENTER_DUNGEON
  0000:F5C8       ENTER_ORACLE
  0000:F38D       ENTER_SHRINE
  0000:4765       ENTER_TOWNE
- 0FF7:ABF9       equip_flags
+ 0FF7:ADE9       equip_flags
  0000:47FF       EXP_CLEAR_PARTYNPC
  0000:4844       EXP_ENTER_ABYSS
  0000:467D       EXP_LOAD_DUNGEON
@@ -520,13 +520,13 @@
  0000:4B0E       EXP_RESTORE_HORSE
  0000:46DD       EXP_SET_DUNGEON
  0FF7:0078       far_psp
- 0FF7:A9A1       Fighters
- 0FF7:AA09       File_DNG
- 0FF7:AB65       File_MAP
- 0FF7:AB6B       File_TLK
- 0FF7:AB6D       File_TLK_2
- 0FF7:AB6F       File_TLK_B
- 0FF7:AB71       File_TLK_Buff
+ 0FF7:AB91       Fighters
+ 0FF7:ABF9       File_DNG
+ 0FF7:AD55       File_MAP
+ 0FF7:AD5B       File_TLK
+ 0FF7:AD5D       File_TLK_2
+ 0FF7:AD5F       File_TLK_B
+ 0FF7:AD61       File_TLK_Buff
  0000:99DB       FIND_REAG
  0000:17D1       FOOD_DEC
  0000:2735       GRA_09
@@ -538,12 +538,12 @@
  0000:2724       GRA_CR
  0000:27B4       GRA_PUTCHAR
  0000:154B       HITCHARA
- 0FF7:AA21       hit_tile
- 0FF7:AA23       hit_x
- 0FF7:AA24       hit_y
- 0FF7:AA3B       HorseTown
- 0FF7:253E       HORSE_X
- 0FF7:2540       HORSE_Y
+ 0FF7:AC11       hit_tile
+ 0FF7:AC13       hit_x
+ 0FF7:AC14       hit_y
+ 0FF7:AC2B       HorseTown
+ 0FF7:26A6       HORSE_X
+ 0FF7:26A8       HORSE_Y
  0000:0D73       HP_DEC
  0000:0D4B       HP_INC
  0000:1224       ISCHARAALIVE
@@ -551,19 +551,19 @@
  0000:65CA       ISCOMBATENDED
  0000:0DD9       KARMA_DEC
  0000:0DBA       KARMA_INC
- 0FF7:9FF6       KEYWORDS
- 0FF7:A008       KEYWORDS_RESPONSE
- 0FF7:4004       LADDER_X0
- 0FF7:4008       LADDER_X1
- 0FF7:3FC4       LDOOR_X0
- 0FF7:3FC8       LDOOR_X1
+ 0FF7:A1E6       KEYWORDS
+ 0FF7:A1F8       KEYWORDS_RESPONSE
+ 0FF7:41F4       LADDER_X0
+ 0FF7:41F8       LADDER_X1
+ 0FF7:41B4       LDOOR_X0
+ 0FF7:41B8       LDOOR_X1
  0000:0BD1       LOAD
  0000:45B1       LOAD_TOWNE
  0000:4644       LOAD_TOWNE_2ND
  0000:0115       low_clean
  0000:0147       low_gra
  0000:0012       low_init
- 0FF7:9F94       MANTRAS
+ 0FF7:A184       MANTRAS
  0000:2C73       MAP_LEAVING
  0000:188B       MP_DRAIN
  0000:17FC       MP_RECOVER
@@ -577,32 +577,32 @@
  0000:5DA5       NPC_MOVE_TOWN
  0000:635B       NPC_TURN
  0000:F5A2       ORB_CHECK
- 0FF7:A5B4       Party
+ 0FF7:A7A4       Party
  0000:1A07       PARTY_DAMAGE
  0000:2137       PARTY_MAINT
- 0FF7:ABFB       patch_tandy
- 0FF7:AA13       pCharset
+ 0FF7:ADEB       patch_tandy
+ 0FF7:AC03       pCharset
  0000:D050       PER_DUNG
  0000:C7F7       PER_WORLD
  0FF7:1168       PKARMAS
  0000:9F5C       POISON
  0000:A5A1       PROJ_ATTACK
- 0FF7:A8C5       pShapes
+ 0FF7:AAB5       pShapes
  0000:9F9B       RANDOM_ENCOUNTER
- 0FF7:356C       RANGE_WEAP
- 0FF7:3FCC       RDOOR_X0
- 0FF7:3FD0       RDOOR_X1
+ 0FF7:375C       RANGE_WEAP
+ 0FF7:41BC       RDOOR_X0
+ 0FF7:41C0       RDOOR_X1
  0000:816F       READY_WEAR_CANT
  0000:D4FA       RESTORE_CRYPT
  0000:0E73       SAFEMODULO
  0000:0C4D       SAVE
  0FF7:1192       SECOND_FLOOR
- 0FF7:AC00       seed_0
- 0FF7:AC04       seed_1
- 0FF7:AC08       seed_2
- 0FF7:AC0C       seed_3
+ 0FF7:ADF0       seed_0
+ 0FF7:ADF4       seed_1
+ 0FF7:ADF8       seed_2
+ 0FF7:ADFC       seed_3
  0000:0CDA       SHAKEFX
- 0FF7:A8B4       ship_x
+ 0FF7:AAA4       ship_x
  0000:E10F       SHP_ARMOR
  0000:ECE9       SHP_FOOD
  0000:E27F       SHP_GUILD
@@ -621,9 +621,9 @@
  0000:9F25       SLEEP
  0000:0D9B       SLEEP_POISONFX
  0000:2E59       SPAWN_DAEMONS
- 0FF7:ABF6       speed_info
- 0FF7:A8DF       spell_cnt
- 0FF7:AA17       spell_sta
+ 0FF7:ADE6       speed_info
+ 0FF7:AACF       spell_cnt
+ 0FF7:AC07       spell_sta
  0000:70C1       SPL_AWAKEN
  0000:7113       SPL_BLINK
  0000:7207       SPL_CURE
@@ -650,18 +650,18 @@
  0000:7877       SPL_X_IT
  0000:7892       SPL_Y_UP
  0000:7916       SPL_Z_DOWN
- 0FF7:2542       TALK_FILES
- 0FF7:259E       TALK_FILES_2
- 0FF7:25B6       TALK_FILES_B
+ 0FF7:26AA       TALK_FILES
+ 0FF7:2706       TALK_FILES_2
+ 0FF7:2762       TALK_FILES_B
  0000:F758       TALK_ORACLE
  0000:9C77       TEST_ITEM
- 0FF7:AA3F       tile_back
- 0FF7:A8B5       tile_cur
- 0FF7:AA11       tile_east
- 0FF7:A8AC       tile_forward
- 0FF7:AA1D       tile_north
- 0FF7:AA36       tile_south
- 0FF7:AA35       tile_west
+ 0FF7:AC2F       tile_back
+ 0FF7:AAA5       tile_cur
+ 0FF7:AC01       tile_east
+ 0FF7:AA9C       tile_forward
+ 0FF7:AC0D       tile_north
+ 0FF7:AC26       tile_south
+ 0FF7:AC25       tile_west
  0000:B19E       TLK_GIVE
  0000:B0A7       TLK_HEALTH
  0000:B095       TLK_JOB
@@ -670,11 +670,11 @@
  0000:B05D       TLK_NAME
  0000:B041       TLK_SPECIAL1
  0000:B04F       TLK_SPECIAL2
- 0FF7:A8B0       Tomb
+ 0FF7:AAA0       Tomb
  0FF7:1322       TOWNE_CASTLE_VILLAGE
  0000:6B80       TRYDAMAGE
- 0FF7:AA1B       txt_X
- 0FF7:AA37       txt_Y
+ 0FF7:AC0B       txt_X
+ 0FF7:AC27       txt_Y
  0000:4549       T_CALLBACK
  0000:5AD0       U4_ABS
  0000:18C3       U4_GETS
@@ -693,14 +693,14 @@
  0000:09D5       USE_WANDMAGIC
  0000:1C57       U_RAND_A
  0000:1C88       u_rand_b
- 0FF7:9FA4       VISIONS
- 0FF7:3FAC       WALL_X0
- 0FF7:3FB2       WALL_X1
- 0FF7:3FB8       WALL_Y0
- 0FF7:3FBE       WALL_Y1
- 0FF7:3552       WEAP_DAM
- 0FF7:AB67       WindDir
- 0FF7:9FE4       WORDS_PASSAGE
+ 0FF7:A194       VISIONS
+ 0FF7:419C       WALL_X0
+ 0FF7:41A2       WALL_X1
+ 0FF7:41A8       WALL_Y0
+ 0FF7:41AE       WALL_Y1
+ 0FF7:3742       WEAP_DAM
+ 0FF7:AD57       WindDir
+ 0FF7:A1D4       WORDS_PASSAGE
  0000:3045       W_BLOCKED
  0000:15C0       W_CANT_T
  0000:15E2       W_DISABLED
@@ -732,10 +732,10 @@
  0000:2527       _dopen
  0000:255B       _dread
  0000:257F       _dwrite
- 0FF7:A5A6       _edata
- 0FF7:B610       _end
- 0FF7:A4AE       _environ
- 0FF7:A48A       _errno
+ 0FF7:A796       _edata
+ 0FF7:B800       _end
+ 0FF7:A69E       _environ
+ 0FF7:A67A       _errno
  0000:F93D       _exit
  0000:26F5       _Gra_00
  0000:26FA       _Gra_01
@@ -769,12 +769,12 @@
  0000:1CEA       _u_kbflush
  0000:1CAB       _u_kbhit
  0000:1CDA       _u_kbread
- 0FF7:A470       __abrkp
- 0FF7:A420       __abrktb
- 0FF7:A470       __abrktbe
+ 0FF7:A660       __abrkp
+ 0FF7:A610       __abrktb
+ 0FF7:A660       __abrktbe
  0000:9876  Abs  __acrtmsg
  0000:9876  Abs  __acrtused
- 0FF7:A47E       __aintdiv
+ 0FF7:A66E       __aintdiv
  0000:F883       __amsg_exit
  0000:FD81       __aNldiv
  0000:FE24       __aNlmul
@@ -782,36 +782,36 @@
  0000:FEF6       __aNuldiv
  0000:FE24       __aNulmul
  0000:FF5B       __aNulshr
- 0FF7:A41C       __asizds
+ 0FF7:A60C       __asizds
  0000:F7E4       __astart
- 0FF7:A41E       __atopsp
+ 0FF7:A60E       __atopsp
  0000:FB2A       __catox
- 0FF7:A4B0       __child
+ 0FF7:A6A0       __child
  0000:F88E       __cinit
  0000:F880       __cintDIV
- 0FF7:A4B2       __csigtab
+ 0FF7:A6A2       __csigtab
  0000:F980       __ctermsub
- 0FF7:A494       __doserrno
- 0FF7:A492       __dosvermajor
- 0FF7:A493       __dosverminor
+ 0FF7:A684       __doserrno
+ 0FF7:A682       __dosvermajor
+ 0FF7:A683       __dosverminor
  0000:F954       __exit
- 0FF7:A482       __fac
- 0FF7:A4BE       __fpinit
+ 0FF7:A672       __fac
+ 0FF7:A6AE       __fpinit
  0000:FD3F       __myalloc
  0000:FB9B       __NMSG_TEXT
  0000:FBCB       __NMSG_WRITE
  0000:FB7F       __nullcheck
- 0FF7:A494       __oserr
- 0FF7:A496       __osfile
- 0FF7:A492       __osmajor
- 0FF7:A493       __osminor
- 0FF7:A490       __psp
- 0FF7:A48E       __pspadr
+ 0FF7:A684       __oserr
+ 0FF7:A686       __osfile
+ 0FF7:A682       __osmajor
+ 0FF7:A683       __osminor
+ 0FF7:A680       __psp
+ 0FF7:A67E       __pspadr
  0000:FBF4       __setargv
  0000:FCD9       __setenvp
- 0FF7:A48C       __umaskval
- 0FF7:A4AA       ___argc
- 0FF7:A4AC       ___argv
+ 0FF7:A67C       __umaskval
+ 0FF7:A69A       ___argc
+ 0FF7:A69C       ___argv
 
   Address         Publics by Value
 
@@ -1359,241 +1359,241 @@
  0FF7:22C4       D_1668
  0FF7:22C6       D_166A
  0FF7:22C8       D_166C
- 0FF7:253E       HORSE_X
- 0FF7:2540       HORSE_Y
- 0FF7:2542       TALK_FILES
- 0FF7:259E       TALK_FILES_2
- 0FF7:25B6       TALK_FILES_B
- 0FF7:26A0       D_17FA
- 0FF7:26A2       D_17FC
- 0FF7:26A4       D_17FE
- 0FF7:283C       D_199A
- 0FF7:2846       D_19A4
- 0FF7:2862       D_19C0
- 0FF7:2F1E       D_SEA_CREA
- 0FF7:2F30       D_CREA
- 0FF7:2F68       D_WEAPONS
- 0FF7:2F8A       D_ARMORS
- 0FF7:2F9A       D_WEA_CODES
- 0FF7:2FBA       D_CLASSES
- 0FF7:2FDA       D_REAGENTS
- 0FF7:2FEA       D_SPELLS
- 0FF7:301E       D_LOCATIONS
- 0FF7:307A       D_VIRTUES
- 0FF7:308A       D_ASSORTED
- 0FF7:308C       D_PRINCIPLES
- 0FF7:3092       D_INCANTATIONS
- 0FF7:30B2       D_ITEMS
- 0FF7:30D0       D_1FD8
- 0FF7:3184       D_208C
- 0FF7:3266       D_216E
- 0FF7:32EC       D_21F4
- 0FF7:33C8       D_22C8
- 0FF7:3434       CLASS_MSK
- 0FF7:34D4       ENEMY_HP
- 0FF7:3508       D_2406
- 0FF7:352C       D_242A
- 0FF7:3552       WEAP_DAM
- 0FF7:3564       ARMOR_PROT
- 0FF7:356C       RANGE_WEAP
- 0FF7:3616       COMBAT_MAPS
- 0FF7:3672       D_256E
- 0FF7:3692       D_258E
- 0FF7:3744       D_261A
- 0FF7:37E2       D_LAAM
- 0FF7:37EA       D_SEAM
- 0FF7:38C4       D_277E
- 0FF7:38EC       D_27A6
- 0FF7:3A36       D_2904
- 0FF7:3A52       D_2920
- 0FF7:3BF2       D_2A7A
- 0FF7:3C08       D_2A90
- 0FF7:3D2A       D_2BB2
- 0FF7:3E4C       D_2CD4
- 0FF7:3F8C       D_2D54
- 0FF7:3FAC       WALL_X0
- 0FF7:3FB2       WALL_X1
- 0FF7:3FB8       WALL_Y0
- 0FF7:3FBE       WALL_Y1
- 0FF7:3FC4       LDOOR_X0
- 0FF7:3FC8       LDOOR_X1
- 0FF7:3FCC       RDOOR_X0
- 0FF7:3FD0       RDOOR_X1
- 0FF7:3FD4       DOOR_Y0
- 0FF7:3FD8       DOOR_Y0P
- 0FF7:3FDC       DOOR_Y1
- 0FF7:3FE0       DOOR_Y1P
- 0FF7:3FE4       D_2DAC
- 0FF7:3FE8       D_2DB0
- 0FF7:3FEC       D_2DB4
- 0FF7:3FF0       D_2DB8
- 0FF7:3FF4       D_2DBC
- 0FF7:3FF8       D_2DC0
- 0FF7:3FFC       D_2DC4
- 0FF7:4000       D_2DC8
- 0FF7:4004       LADDER_X0
- 0FF7:4008       LADDER_X1
- 0FF7:400C       D_2DD4
- 0FF7:4010       D_2DD8
- 0FF7:4014       D_2DDC
- 0FF7:4018       D_2DE0
- 0FF7:401C       D_2DE4
- 0FF7:4020       D_2DE8
- 0FF7:4024       D_2DEC
- 0FF7:4026       D_2DEE
- 0FF7:403C       D_2E04
- 0FF7:40A6       D_2E6E
- 0FF7:40B6       D_2E7E
- 0FF7:41AA       D_2F72
- 0FF7:42AA       D_2FF2
- 0FF7:50F8       D_3F0C
- 0FF7:5388       D_4170
- 0FF7:53B0       D_4180
- 0FF7:53BC       D_4188
- 0FF7:53C8       D_4190
- 0FF7:58E6       D_46A2
- 0FF7:58F2       D_46AE
- 0FF7:58FE       D_46BA
- 0FF7:5916       D_46D2
- 0FF7:5938       D_46F2
- 0FF7:5948       D_4702
- 0FF7:5E02       D_4BAE
- 0FF7:5E0E       D_4BB8
- 0FF7:5E1A       D_4BC4
- 0FF7:5E36       D_4BDC
- 0FF7:5E46       D_4BEC
- 0FF7:5E6E       D_4BFC
- 0FF7:642A       D_5196
- 0FF7:6452       D_51A6
- 0FF7:645A       D_51AE
- 0FF7:6462       D_51B6
- 0FF7:6468       D_51BA
- 0FF7:646E       D_51BE
- 0FF7:6734       D_5484
- 0FF7:6744       D_5494
- 0FF7:674C       D_549C
- 0FF7:6754       D_54A4
- 0FF7:675C       D_54AC
- 0FF7:676A       D_54BA
- 0FF7:6778       D_54C8
- 0FF7:6922       D_5672
- 0FF7:6926       D_5676
- 0FF7:692A       D_567A
- 0FF7:6A52       D_5788
- 0FF7:6A7A       D_5798
- 0FF7:6A90       D_57AC
- 0FF7:71F0       D_5EE8
- 0FF7:7218       D_5EF8
- 0FF7:7226       D_5F04
- 0FF7:7234       D_5F10
- 0FF7:7242       D_5F1C
- 0FF7:7250       D_5F28
- 0FF7:725E       D_5F34
- 0FF7:726C       D_5F42
- 0FF7:76C4       D_636C
- 0FF7:76EC       D_637C
- 0FF7:76FA       D_6386
- 0FF7:7708       D_6390
- 0FF7:8484       D_6FF0
- 0FF7:84C4       D_7028
- 0FF7:9F94       MANTRAS
- 0FF7:9FA4       VISIONS
- 0FF7:9FD4       D_8362
- 0FF7:9FE4       WORDS_PASSAGE
- 0FF7:9FF6       KEYWORDS
- 0FF7:A008       KEYWORDS_RESPONSE
- 0FF7:A41C       __asizds
- 0FF7:A41E       __atopsp
- 0FF7:A420       __abrktb
- 0FF7:A470       __abrktbe
- 0FF7:A470       __abrkp
- 0FF7:A47E       __aintdiv
- 0FF7:A482       __fac
- 0FF7:A48A       _errno
- 0FF7:A48C       __umaskval
- 0FF7:A48E       __pspadr
- 0FF7:A490       __psp
- 0FF7:A492       __osmajor
- 0FF7:A492       __dosvermajor
- 0FF7:A493       __osminor
- 0FF7:A493       __dosverminor
- 0FF7:A494       __oserr
- 0FF7:A494       __doserrno
- 0FF7:A496       __osfile
- 0FF7:A4AA       ___argc
- 0FF7:A4AC       ___argv
- 0FF7:A4AE       _environ
- 0FF7:A4B0       __child
- 0FF7:A4B2       __csigtab
- 0FF7:A4BE       __fpinit
- 0FF7:A5A6       _edata
- 0FF7:A5B0       D_9140
- 0FF7:A5B1       D_9141
- 0FF7:A5B2       D_9142
- 0FF7:A5B4       Party
- 0FF7:A7AA       D_933A
- 0FF7:A8AA       D_943A
- 0FF7:A8AC       tile_forward
- 0FF7:A8AE       Altar
- 0FF7:A8B0       Tomb
- 0FF7:A8B2       D_9440
- 0FF7:A8B4       ship_x
- 0FF7:A8B5       tile_cur
- 0FF7:A8B6       D_9445
- 0FF7:A8B7       D_9446
- 0FF7:A8B9       D_9448
- 0FF7:A8BB       D_944A
- 0FF7:A8C3       D_9452
- 0FF7:A8C5       pShapes
- 0FF7:A8C9       D_9458
- 0FF7:A8DB       CurMode
- 0FF7:A8DD       D_946C
- 0FF7:A8DF       spell_cnt
- 0FF7:A8E1       Combat
- 0FF7:A9A1       Fighters
- 0FF7:AA09       File_DNG
- 0FF7:AA0B       activeChara
- 0FF7:AA0D       closeCrypt
- 0FF7:AA0F       D_959C
- 0FF7:AA11       tile_east
- 0FF7:AA13       pCharset
- 0FF7:AA17       spell_sta
- 0FF7:AA18       D_95A5
- 0FF7:AA1B       txt_X
- 0FF7:AA1D       tile_north
- 0FF7:AA1F       activeCharaY
- 0FF7:AA21       hit_tile
- 0FF7:AA23       hit_x
- 0FF7:AA24       hit_y
- 0FF7:AA25       D_95B2
- 0FF7:AA35       tile_west
- 0FF7:AA36       tile_south
- 0FF7:AA37       txt_Y
- 0FF7:AA39       DoublePace
- 0FF7:AA3B       HorseTown
- 0FF7:AA3D       D_95C8
- 0FF7:AA3F       tile_back
- 0FF7:AA41       D_95CC
- 0FF7:AA43       D_95CE
- 0FF7:AB63       D_96EE
- 0FF7:AB65       File_MAP
- 0FF7:AB67       WindDir
- 0FF7:AB69       D_96F4
- 0FF7:AB6B       File_TLK
- 0FF7:AB6D       File_TLK_2
- 0FF7:AB6F       File_TLK_B
- 0FF7:AB71       File_TLK_Buff
- 0FF7:AB73       D_96F8
- 0FF7:AB74       D_96F9
- 0FF7:ABED       D_9772
- 0FF7:ABF6       speed_info
- 0FF7:ABF9       equip_flags
- 0FF7:ABFB       patch_tandy
- 0FF7:AC00       seed_0
- 0FF7:AC04       seed_1
- 0FF7:AC08       seed_2
- 0FF7:AC0C       seed_3
- 0FF7:AC10       D_8742
- 0FF7:B610       _end
+ 0FF7:26A6       HORSE_X
+ 0FF7:26A8       HORSE_Y
+ 0FF7:26AA       TALK_FILES
+ 0FF7:2706       TALK_FILES_2
+ 0FF7:2762       TALK_FILES_B
+ 0FF7:2890       D_17FA
+ 0FF7:2892       D_17FC
+ 0FF7:2894       D_17FE
+ 0FF7:2A2C       D_199A
+ 0FF7:2A36       D_19A4
+ 0FF7:2A52       D_19C0
+ 0FF7:310E       D_SEA_CREA
+ 0FF7:3120       D_CREA
+ 0FF7:3158       D_WEAPONS
+ 0FF7:317A       D_ARMORS
+ 0FF7:318A       D_WEA_CODES
+ 0FF7:31AA       D_CLASSES
+ 0FF7:31CA       D_REAGENTS
+ 0FF7:31DA       D_SPELLS
+ 0FF7:320E       D_LOCATIONS
+ 0FF7:326A       D_VIRTUES
+ 0FF7:327A       D_ASSORTED
+ 0FF7:327C       D_PRINCIPLES
+ 0FF7:3282       D_INCANTATIONS
+ 0FF7:32A2       D_ITEMS
+ 0FF7:32C0       D_1FD8
+ 0FF7:3374       D_208C
+ 0FF7:3456       D_216E
+ 0FF7:34DC       D_21F4
+ 0FF7:35B8       D_22C8
+ 0FF7:3624       CLASS_MSK
+ 0FF7:36C4       ENEMY_HP
+ 0FF7:36F8       D_2406
+ 0FF7:371C       D_242A
+ 0FF7:3742       WEAP_DAM
+ 0FF7:3754       ARMOR_PROT
+ 0FF7:375C       RANGE_WEAP
+ 0FF7:3806       COMBAT_MAPS
+ 0FF7:3862       D_256E
+ 0FF7:3882       D_258E
+ 0FF7:3934       D_261A
+ 0FF7:39D2       D_LAAM
+ 0FF7:39DA       D_SEAM
+ 0FF7:3AB4       D_277E
+ 0FF7:3ADC       D_27A6
+ 0FF7:3C26       D_2904
+ 0FF7:3C42       D_2920
+ 0FF7:3DE2       D_2A7A
+ 0FF7:3DF8       D_2A90
+ 0FF7:3F1A       D_2BB2
+ 0FF7:403C       D_2CD4
+ 0FF7:417C       D_2D54
+ 0FF7:419C       WALL_X0
+ 0FF7:41A2       WALL_X1
+ 0FF7:41A8       WALL_Y0
+ 0FF7:41AE       WALL_Y1
+ 0FF7:41B4       LDOOR_X0
+ 0FF7:41B8       LDOOR_X1
+ 0FF7:41BC       RDOOR_X0
+ 0FF7:41C0       RDOOR_X1
+ 0FF7:41C4       DOOR_Y0
+ 0FF7:41C8       DOOR_Y0P
+ 0FF7:41CC       DOOR_Y1
+ 0FF7:41D0       DOOR_Y1P
+ 0FF7:41D4       D_2DAC
+ 0FF7:41D8       D_2DB0
+ 0FF7:41DC       D_2DB4
+ 0FF7:41E0       D_2DB8
+ 0FF7:41E4       D_2DBC
+ 0FF7:41E8       D_2DC0
+ 0FF7:41EC       D_2DC4
+ 0FF7:41F0       D_2DC8
+ 0FF7:41F4       LADDER_X0
+ 0FF7:41F8       LADDER_X1
+ 0FF7:41FC       D_2DD4
+ 0FF7:4200       D_2DD8
+ 0FF7:4204       D_2DDC
+ 0FF7:4208       D_2DE0
+ 0FF7:420C       D_2DE4
+ 0FF7:4210       D_2DE8
+ 0FF7:4214       D_2DEC
+ 0FF7:4216       D_2DEE
+ 0FF7:422C       D_2E04
+ 0FF7:4296       D_2E6E
+ 0FF7:42A6       D_2E7E
+ 0FF7:439A       D_2F72
+ 0FF7:449A       D_2FF2
+ 0FF7:52E8       D_3F0C
+ 0FF7:5578       D_4170
+ 0FF7:55A0       D_4180
+ 0FF7:55AC       D_4188
+ 0FF7:55B8       D_4190
+ 0FF7:5AD6       D_46A2
+ 0FF7:5AE2       D_46AE
+ 0FF7:5AEE       D_46BA
+ 0FF7:5B06       D_46D2
+ 0FF7:5B28       D_46F2
+ 0FF7:5B38       D_4702
+ 0FF7:5FF2       D_4BAE
+ 0FF7:5FFE       D_4BB8
+ 0FF7:600A       D_4BC4
+ 0FF7:6026       D_4BDC
+ 0FF7:6036       D_4BEC
+ 0FF7:605E       D_4BFC
+ 0FF7:661A       D_5196
+ 0FF7:6642       D_51A6
+ 0FF7:664A       D_51AE
+ 0FF7:6652       D_51B6
+ 0FF7:6658       D_51BA
+ 0FF7:665E       D_51BE
+ 0FF7:6924       D_5484
+ 0FF7:6934       D_5494
+ 0FF7:693C       D_549C
+ 0FF7:6944       D_54A4
+ 0FF7:694C       D_54AC
+ 0FF7:695A       D_54BA
+ 0FF7:6968       D_54C8
+ 0FF7:6B12       D_5672
+ 0FF7:6B16       D_5676
+ 0FF7:6B1A       D_567A
+ 0FF7:6C42       D_5788
+ 0FF7:6C6A       D_5798
+ 0FF7:6C80       D_57AC
+ 0FF7:73E0       D_5EE8
+ 0FF7:7408       D_5EF8
+ 0FF7:7416       D_5F04
+ 0FF7:7424       D_5F10
+ 0FF7:7432       D_5F1C
+ 0FF7:7440       D_5F28
+ 0FF7:744E       D_5F34
+ 0FF7:745C       D_5F42
+ 0FF7:78B4       D_636C
+ 0FF7:78DC       D_637C
+ 0FF7:78EA       D_6386
+ 0FF7:78F8       D_6390
+ 0FF7:8674       D_6FF0
+ 0FF7:86B4       D_7028
+ 0FF7:A184       MANTRAS
+ 0FF7:A194       VISIONS
+ 0FF7:A1C4       D_8362
+ 0FF7:A1D4       WORDS_PASSAGE
+ 0FF7:A1E6       KEYWORDS
+ 0FF7:A1F8       KEYWORDS_RESPONSE
+ 0FF7:A60C       __asizds
+ 0FF7:A60E       __atopsp
+ 0FF7:A610       __abrktb
+ 0FF7:A660       __abrktbe
+ 0FF7:A660       __abrkp
+ 0FF7:A66E       __aintdiv
+ 0FF7:A672       __fac
+ 0FF7:A67A       _errno
+ 0FF7:A67C       __umaskval
+ 0FF7:A67E       __pspadr
+ 0FF7:A680       __psp
+ 0FF7:A682       __osmajor
+ 0FF7:A682       __dosvermajor
+ 0FF7:A683       __osminor
+ 0FF7:A683       __dosverminor
+ 0FF7:A684       __oserr
+ 0FF7:A684       __doserrno
+ 0FF7:A686       __osfile
+ 0FF7:A69A       ___argc
+ 0FF7:A69C       ___argv
+ 0FF7:A69E       _environ
+ 0FF7:A6A0       __child
+ 0FF7:A6A2       __csigtab
+ 0FF7:A6AE       __fpinit
+ 0FF7:A796       _edata
+ 0FF7:A7A0       D_9140
+ 0FF7:A7A1       D_9141
+ 0FF7:A7A2       D_9142
+ 0FF7:A7A4       Party
+ 0FF7:A99A       D_933A
+ 0FF7:AA9A       D_943A
+ 0FF7:AA9C       tile_forward
+ 0FF7:AA9E       Altar
+ 0FF7:AAA0       Tomb
+ 0FF7:AAA2       D_9440
+ 0FF7:AAA4       ship_x
+ 0FF7:AAA5       tile_cur
+ 0FF7:AAA6       D_9445
+ 0FF7:AAA7       D_9446
+ 0FF7:AAA9       D_9448
+ 0FF7:AAAB       D_944A
+ 0FF7:AAB3       D_9452
+ 0FF7:AAB5       pShapes
+ 0FF7:AAB9       D_9458
+ 0FF7:AACB       CurMode
+ 0FF7:AACD       D_946C
+ 0FF7:AACF       spell_cnt
+ 0FF7:AAD1       Combat
+ 0FF7:AB91       Fighters
+ 0FF7:ABF9       File_DNG
+ 0FF7:ABFB       activeChara
+ 0FF7:ABFD       closeCrypt
+ 0FF7:ABFF       D_959C
+ 0FF7:AC01       tile_east
+ 0FF7:AC03       pCharset
+ 0FF7:AC07       spell_sta
+ 0FF7:AC08       D_95A5
+ 0FF7:AC0B       txt_X
+ 0FF7:AC0D       tile_north
+ 0FF7:AC0F       activeCharaY
+ 0FF7:AC11       hit_tile
+ 0FF7:AC13       hit_x
+ 0FF7:AC14       hit_y
+ 0FF7:AC15       D_95B2
+ 0FF7:AC25       tile_west
+ 0FF7:AC26       tile_south
+ 0FF7:AC27       txt_Y
+ 0FF7:AC29       DoublePace
+ 0FF7:AC2B       HorseTown
+ 0FF7:AC2D       D_95C8
+ 0FF7:AC2F       tile_back
+ 0FF7:AC31       D_95CC
+ 0FF7:AC33       D_95CE
+ 0FF7:AD53       D_96EE
+ 0FF7:AD55       File_MAP
+ 0FF7:AD57       WindDir
+ 0FF7:AD59       D_96F4
+ 0FF7:AD5B       File_TLK
+ 0FF7:AD5D       File_TLK_2
+ 0FF7:AD5F       File_TLK_B
+ 0FF7:AD61       File_TLK_Buff
+ 0FF7:AD63       D_96F8
+ 0FF7:AD64       D_96F9
+ 0FF7:ADDD       D_9772
+ 0FF7:ADE6       speed_info
+ 0FF7:ADE9       equip_flags
+ 0FF7:ADEB       patch_tandy
+ 0FF7:ADF0       seed_0
+ 0FF7:ADF4       seed_1
+ 0FF7:ADF8       seed_2
+ 0FF7:ADFC       seed_3
+ 0FF7:AE00       D_8742
+ 0FF7:B800       _end
 
 Program entry point at 0000:F7E4
