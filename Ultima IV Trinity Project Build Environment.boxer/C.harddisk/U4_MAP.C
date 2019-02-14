@@ -327,9 +327,9 @@ C_2941()
 /*Inserted Dragons so they are not solid and mountable*/
 unsigned char D_0904[] = {
 	TIL_Swamp_03,TIL_Grass_04,TIL_Scrub_05,TIL_Forest_06,TIL_Hills_07,TIL_Dung_09,TIL_Town_0A,TIL_Castle_0B,TIL_Village_0C,
-	TIL_ShipW_10,TIL_ShipN_11,TIL_ShipE_12,TIL_ShipS_13,TIL_HorseW_14,TIL_HorseE_15,TIL_Dragon1,TIL_Dragon2,TIL_Dragon3,TIL_Dragon4,TIL_16,TIL_17,TIL_18,
+	TIL_ShipW_10,TIL_ShipN_11,TIL_ShipE_12,TIL_ShipS_13,TIL_HorseW_14,TIL_HorseE_15,TIL_16,TIL_17,TIL_18,
 	TIL_19,TIL_1A,TIL_1B,TIL_1C,TIL_1D,TIL_1E,TIL_3C,TIL_3E,TIL_3F,
-	TIL_43,TIL_44,TIL_46,TIL_47,TIL_49,TIL_4A,TIL_4C,TIL_8E,TIL_8F,TIL_Fireplace_1,TIL_Fireplace_2,TIL_Fireplace_3,TIL_Tower,TIL_Oracle_Good,TIL_Crypt_Open,TIL_Hamlet,
+	TIL_43,TIL_44,TIL_46,TIL_47,TIL_49,TIL_4A,TIL_4C,TIL_8E,TIL_8F,TIL_Fireplace_1,TIL_Fireplace_2,TIL_Fireplace_3,TIL_Tower,TIL_Oracle_Good,TIL_Crypt_Open,TIL_Hamlet,TIL_Dragon1,TIL_Dragon2,TIL_Dragon3,TIL_Dragon4,
 	0/*End of list*/
 };
 /*-----------Modified Code for Dragons!---------------*/
@@ -342,7 +342,10 @@ unsigned char bp04;
     
 	for(si = 0; D_0904[si]; si ++)
 		if(bp04 == D_0904[si])
-			return 1;
+            if (D_0904[si] >= TIL_Dragon1 && CurMode == MOD_COMBAT){
+                return 0;}
+            else{
+                return 1;}
 	return 0;
 }
 
