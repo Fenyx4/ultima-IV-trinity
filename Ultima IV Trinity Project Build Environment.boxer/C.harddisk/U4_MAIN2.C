@@ -123,7 +123,7 @@ char *Second_Floor[] = {
     /*0x9A 0x41*/"MOUNTCA1.ULT",
     /*0xD9 0x34*/"SWAMPCA1.ULT",
     /*0x51 0xB7*/"PLAINSC1.ULT",
-    /*0x30 0x9E*/"VALLEYC1.ULT",
+    /*0x30 0x9E*/"VALLEYCA.ULT",
     /*0x51 0xB7*/"FARMCA1.ULT",
     /*0x30 0x9E*/"RANCHCA1.ULT",
     

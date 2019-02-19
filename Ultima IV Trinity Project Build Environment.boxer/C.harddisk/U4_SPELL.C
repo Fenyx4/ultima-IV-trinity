@@ -6,6 +6,8 @@
 
 #include "u4.h"
 
+#include <string.h>
+
 /*spells m.p. cost*/
 char D_208C[] = {
 	 5,/*Awaken*/
@@ -675,4 +677,81 @@ pSpell_handler D_216E[] = {
 	/*-- cast spell --*/
 	(*D_216E[D_8CCC])();
 	dspl_Stats();
+}
+
+struct {
+    char *_00;
+    void (*_02)();
+} Words_Power[] = {
+    {/*D_03D5*/"awaken",  SPL_Awaken},
+    {/*D_03DB*/"blink", SPL_Blink},
+    {/*D_03E2*/"cure",   SPL_Cure},
+    {/*D_03E7*/"negate",   SPL_Negate},
+    {/*D_03EC*/"energy", SPL_Energy},
+    {/*D_03F3*/"Xen Cor",    SPL_Resurrect},
+    {/*D_03F7*/"keys",   SPL_View},
+    {/*D_03FC*/"horn",   SPL_View},
+    {/*D_03FC*/"ring",   SPL_View},
+    {/*D_0401*/"wheel",  SPL_View},
+    {/*D_0407*/"skull",  SPL_View},
+    {/*D_0407*/"wand",   SPL_View},
+    {/*D_0407*/"belt",   SPL_View},
+    {/*D_0407*/"orb",   SPL_View},
+    {/*D_03DB*/"stones2", SPL_View},
+    {/*D_03E2*/"bell2",   SPL_View},
+    {/*D_03E7*/"book2",   SPL_View},
+    {/*D_03EC*/"candle2", SPL_View},
+    {/*D_03F3*/"key2",    SPL_View},
+    {/*D_03F7*/"keys2",   SPL_View},
+    {/*D_03FC*/"horn2",   SPL_View},
+    {/*D_03FC*/"ring2",   SPL_View},
+    {/*D_0401*/"wheel2",  SPL_View},
+    {/*D_0407*/"skull2",  SPL_View},
+    {/*D_0407*/"wand2",   SPL_View},
+    {/*D_0407*/"belt2",   SPL_View},
+    {/*D_0407*/"orb2",   SPL_View},
+    {/*D_03DB*/"stones3", SPL_View},
+    {/*D_03E2*/"bell3",   SPL_View},
+    {/*D_03E7*/"book3",   SPL_View},
+    {/*D_03EC*/"candle3", SPL_View},
+    {/*D_03F3*/"key4",    SPL_View},
+    {/*D_03F7*/"keys3",   SPL_View},
+    {/*D_03FC*/"horn3",   SPL_View},
+    {/*D_03FC*/"ring3",   SPL_View},
+    {/*D_0401*/"wheel3",  SPL_View},
+    {/*D_0407*/"skull3",  SPL_View},
+    {/*D_0407*/"wand3",   SPL_View},
+    {/*D_0407*/"belt3",   SPL_View},
+    {/*D_0407*/"orb3",   SPL_View},
+    {/*D_040D*/"",       0}
+};
+
+CMD_Yell()
+{
+    
+    register int si;
+    char bp_0e[12];
+    
+    u4_puts("Yell ");
+    if(Party._tile == TIL_HorseW_14 || Party._tile == TIL_HorseE_15) {
+        if(DoublePace ^= 1)
+            u4_puts(/*D_17E9*/"Giddyup!\n");
+        else
+            u4_puts(/*D_17F3*/"Whoa!\n");
+    } else {
+        
+      /*  u4_puts("What:\n");
+        u4_gets(bp_0e, 11);
+        Gra_CR();
+        for(si = 0; Words_Power[si]._00[0]; si++) {
+            if(strnicmp(Words_Power[si]._00, bp_0e, 12) == 0) {
+                (*(Words_Power[si]._02))();
+                MP_drain();
+                return;
+            }
+        }
+        u4_puts("Nothing Happens!\n");*/
+
+        w_What();
+    }
 }

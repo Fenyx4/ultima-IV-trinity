@@ -106,7 +106,7 @@ int bp04;
 	if(Party.f_1dc == 1) {
     /*-----------Modified Code for Dragons!---------------*/
         
-		u4_puts(/*D_2281*/"Get chest\n");
+		u4_puts(/*D_2281*/"Get Chest\n");
 		w_DriftOnly();
 		return;
 	}

@@ -50,7 +50,7 @@ char *Talk_Files[] ={
     /*D_0791*/"W",
     /*D_0797*/"B",
     /*Camps*/
-    /*D_16C6*/"RIVERCA.TLK",
+    /*D_16C6*/"RIVERC1.TLK",
     /*D_16D1*/"FORESTCA.TLK",
     /*D_16C6*/"MOUNTCA.TLK",
     /*D_16D1*/"SWAMPCA.TLK",
@@ -108,11 +108,11 @@ char *Talk_Files_2[] ={
     /*D_0791*/"W",
     /*D_0797*/"B",
     /*Camps*/
-    /*D_16C6*/"RIVERCA.TLK",
+    /*D_16C6*/"RIVERC1.TLK",
     /*D_16D1*/"FORESTCA.TLK",
     /*D_16C6*/"MOUNTCA.TLK",
     /*D_16D1*/"SWAMPCA.TLK",
-    /*D_16C6*/"PLAINSC2.TLK",
+    /*D_16C6*/"PLAINSC1.TLK",
     /*D_16D1*/"VALLEYCA.TLK",
     /*D_16C6*/"FARMCA.TLK",
     /*D_16D1*/"VALLEYCA.TLK",
@@ -165,11 +165,11 @@ char *Talk_Files_B[] ={
     /*D_0791*/"W",
     /*D_0797*/"B",
     /*Camps*/
-    /*D_16C6*/"RIVERCA.TLK",
+    /*D_16C6*/"RIVERC1.TLK",
     /*D_16D1*/"FORESTCA.TLK",
     /*D_16C6*/"MOUNTCA.TLK",
     /*D_16D1*/"SWAMPCA.TLK",
-    /*D_16C6*/"PLAINSCB.TLK",
+    /*D_16C6*/"PLAINSC1.TLK",
     /*D_16D1*/"VALLEYCA.TLK",
     /*D_16C6*/"FARMCA.TLK",
     /*D_16D1*/"VALLEYCA.TLK",
@@ -213,7 +213,7 @@ EXP_Load_Dungeon()
 {
 	register int si;
     char *dun_choi;
-
+    
     /*made party._loc one bigger to ensure that Abyss is loaded correctly?*/
     if(Party._loc <= 0x19) {
         dun_choi = Dungeons[Party._loc - 0x11];
@@ -225,7 +225,6 @@ EXP_Load_Dungeon()
         File_DNG = dopen(dun_choi, 0);
         for(si = 0x1f; si >= 0; si --)
             D_8742._npc._tile[si] = 0;
-    
 }
 
 EXP_Set_Dungeon()
@@ -613,18 +612,7 @@ CMD_Board()
     
 }
 
-CMD_Yell()
-{
-	u4_puts("Yell ");
-	if(Party._tile == TIL_HorseW_14 || Party._tile == TIL_HorseE_15) {
-		if(DoublePace ^= 1)
-			u4_puts(/*D_17E9*/"Giddyup!\n");
-		else
-			u4_puts(/*D_17F3*/"Whoa!\n");
-	} else {
-		w_What();
-	}
-}
+
 
 unsigned D_17FA = 0;/*current opened door's x*/
 unsigned D_17FC = 0;/*current opened door's y*/
