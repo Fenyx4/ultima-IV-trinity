@@ -150,5 +150,15 @@ $('.cd-primary-nav-trigger').on('click',function(){$('.cd-menu-icon').toggleClas
   <!--<script src="https://unpkg.com/scrollreveal"></script>-->
   <script src="{{ site.url }}/assets/js/swiper.min.js"></script>
 
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+
   </body>
 </html>
