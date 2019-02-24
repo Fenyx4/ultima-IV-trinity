@@ -50,14 +50,14 @@ char *Talk_Files[] ={
     /*D_0791*/"W",
     /*D_0797*/"B",
     /*Camps*/
-    /*D_16C6*/"RIVERC1.TLK",
+    /*D_16C6*/"RIVERCA.TLK",
     /*D_16D1*/"FORESTCA.TLK",
     /*D_16C6*/"MOUNTCA.TLK",
     /*D_16D1*/"SWAMPCA.TLK",
     /*D_16C6*/"PLAINSC1.TLK",
     /*D_16D1*/"VALLEYCA.TLK",
     /*D_16C6*/"FARMCA.TLK",
-    /*D_16D1*/"VALLEYCA.TLK",
+    /*D_16D1*/"RANCHCA.TLK",
     /*Crypts*/
     /*D_07EE*/"M",
     /*D_07EE*/"M",
@@ -108,14 +108,14 @@ char *Talk_Files_2[] ={
     /*D_0791*/"W",
     /*D_0797*/"B",
     /*Camps*/
-    /*D_16C6*/"RIVERC1.TLK",
+    /*D_16C6*/"RIVERCA.TLK",
     /*D_16D1*/"FORESTCA.TLK",
     /*D_16C6*/"MOUNTCA.TLK",
     /*D_16D1*/"SWAMPCA.TLK",
     /*D_16C6*/"PLAINSC1.TLK",
     /*D_16D1*/"VALLEYCA.TLK",
     /*D_16C6*/"FARMCA.TLK",
-    /*D_16D1*/"VALLEYCA.TLK",
+    /*D_16D1*/"RANCHCA.TLK",
     /*Crypts*/
     /*D_07EE*/"M",
     /*D_07EE*/"M",
@@ -172,7 +172,7 @@ char *Talk_Files_B[] ={
     /*D_16C6*/"PLAINSC1.TLK",
     /*D_16D1*/"VALLEYCA.TLK",
     /*D_16C6*/"FARMCA.TLK",
-    /*D_16D1*/"VALLEYCA.TLK",
+    /*D_16D1*/"RANCHCA.TLK",
     /*Crypts*/
     /*D_07EE*/"M",
     /*D_07EE*/"M",
