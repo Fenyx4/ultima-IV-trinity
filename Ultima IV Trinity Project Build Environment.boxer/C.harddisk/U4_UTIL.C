@@ -286,7 +286,7 @@ dspl_Stats()
     /*-----------Added Code for Dragons!---------------*/
         
 		u4_puts(" G:");
-		u4_putl(Party._z, 4, '0');
+		u4_putl(Party._gold, 4, '0');
 	}
 	txt_Y = loc_E;
 	txt_X = loc_A;
