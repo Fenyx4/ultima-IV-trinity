@@ -18,6 +18,7 @@ mockup:
   * No more infinite Mystic Weaps/Armor
   * Hythloth bug fixed
   * Ship instant repair bug fixed
+  * Camping at sea bug fixed
   * Other Small fixes
   
 ### New Features
@@ -28,6 +29,10 @@ mockup:
   * New, powerful Artifacts
   * New Shrines (Oracles)
   * 2nd levels for all Towns
+  * Multi-level Castles
+  * New magic system
+  * New tiles/sprites
+  * New mounts
   * Many other small additions
   
 ### Other Highlights
