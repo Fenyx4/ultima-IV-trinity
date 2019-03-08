@@ -22,7 +22,7 @@ mockup:
   * Other Small fixes
   
 ### New Features
-  * New Villages and Camps
+  * New Hamlets and Towers
   * New Shops and Merchants
   * Dozens of new Characters
   * New Dungeons (Crypts)
