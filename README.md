@@ -18,16 +18,21 @@ This project aims to modify the original Ultima IV to add additional content, vi
   * No more infinite Mystic Weaps/Armor
   * Hythloth bug fixed
   * Ship instant repair bug fixed
+  * Camping at sea bug fixed
   * Other Small fixes
   
 ### New Features
-  * New Villages and Camps
+  * New Hamlets and Towers
   * New Shops and Merchants
   * Dozens of new Characters
   * New Dungeons (Crypts)
   * New, powerful Artifacts
   * New Shrines (Oracles)
   * 2nd levels for all Towns
+  * Multi-level Castles
+  * New magic system
+  * New tiles/sprites
+  * New mounts
   * Many other small additions
   
 ### Other Highlights
