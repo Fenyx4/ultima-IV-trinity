@@ -360,8 +360,6 @@ extern char D_0844[]; /*x-coordinate for locations*/
 extern char D_0864[]; /*y-coordinate for locations*/
 extern char *Shrines[];
 extern char *Dungeons[];
-extern char *Crypts[];
-extern char *Oracles[];
 /*strings*/
 extern char *D_Sea_Crea[];
 extern char *D_Crea[];

@@ -66,7 +66,10 @@ C_87E2();*/
 				case KBD_O:
 				case KBD_T:
 				case KBD_X:
-				case KBD_Y: w_NotHere(); sound(2); break;
+                    /*added for Words of Power */
+                case KBD_Y: CMD_Yell(); break; /*w_NotHere(); sound(2); break;*/
+                    /*added for Words of Power */
+                    
 				/*case KBD_CTRL_S:
 					if(bp_04 == KBD_ALT_Z) {
 						C_1C21();

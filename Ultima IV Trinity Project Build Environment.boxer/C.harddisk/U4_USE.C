@@ -294,7 +294,8 @@ USE_Ring() {
     
         /* All Party Damage */
         Party_Damage(100);
-        MP_drain();
+        /*removed as could cause negative MP*/
+        /*MP_drain();*/
         Gra_09();
         spell_sta = 'R';
         spell_cnt = 7;
@@ -452,7 +453,8 @@ USE_WandMagic() {
         return;
     
     Party_Damage(spell_power * 4);
-    MP_drain();
+    /*removed as could cause negative MP*/
+    /*MP_drain();*/
     
     Party._y = wandy;
     Party._x = wandx;

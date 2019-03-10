@@ -787,6 +787,7 @@ int bp04;
 
 		for(loc_B = Party._members - 1; loc_B >= 0; loc_B --) {
 			if(U4_RND1(1) && isCharaAlive(loc_B)) {
+                /*This calculation for damage should be tweaked?*/
 				loc_A = U4_RND3(bp04) + 10;
 				if(CurMode < MOD_COMBAT || Fighters._chtile[loc_B])
 					hitChara(loc_B, loc_A);

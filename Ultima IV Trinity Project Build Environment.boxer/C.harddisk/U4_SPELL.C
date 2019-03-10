@@ -690,8 +690,8 @@ struct {
     {/*D_03EC*/"energy", SPL_Energy},
     {/*D_03F3*/"Xen Cor",    SPL_Resurrect},
     {/*D_03F7*/"gate",   SPL_Gate},
-    {/*D_03FC*/"horn",   SPL_View},
-    {/*D_03FC*/"ring",   SPL_View},
+    {/*D_03FC*/"tremor",   SPL_Tremor},
+    {/*D_03FC*/"down",   SPL_Z_down},
     {/*D_0401*/"wheel",  SPL_View},
     {/*D_0407*/"skull",  SPL_View},
     {/*D_0407*/"wand",   SPL_View},
@@ -738,7 +738,30 @@ CMD_Yell()
             u4_puts(/*D_17E9*/"Giddyup!\n");
         else
             u4_puts(/*D_17F3*/"Whoa!\n");
-    } else {
+    }
+    else if(Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4) {
+
+        if(!(tile_cur >= TIL_Swamp_03 && tile_cur <= TIL_Mount_08) && Party.f_1dc == 1){
+            u4_puts(/*D_17F3*/"Land!\n");
+            sound(1);
+            w_NotHere();
+            return;
+        }
+        else {
+            if(DoublePace ^= 1){
+                u4_puts(/*D_17E9*/"Klimb!\n");
+                Party.f_1dc = 1;
+                D_9440 = 0;
+            }
+            else {
+                u4_puts(/*D_17F3*/"Land!\n");
+                Party.f_1dc = 0;
+                D_9440 = 1;
+            }
+        }
+
+    }
+    else {
         
         u4_puts("What:\n");
         u4_gets(bp_0e, 11);
@@ -747,8 +770,9 @@ CMD_Yell()
             if(strnicmp(Words_Power[si]._00, bp_0e, 12) == 0) {
                 u4_puts("\nA Word of Power is Uttered!\n\n");
                 Big_Shake();
-                MP_drain(); /*tried party_damage here, but it didn't work when on a dragon...*/
+                /*tried party_damage here, but it didn't work when on a dragon...*/
                 (*(Words_Power[si]._02))();
+                Party_Damage(D_208C[si] * 10);
                 return;
             }
         }

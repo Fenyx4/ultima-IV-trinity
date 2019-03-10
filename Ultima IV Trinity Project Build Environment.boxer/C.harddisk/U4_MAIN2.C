@@ -348,7 +348,27 @@ char *Dungeons[] = {
     /*D_07CA*/"Covetous.Dng",
     /*D_07D7*/"Shame.Dng",
     /*D_07E1*/"Hythloth.Dng",
-    /*D_07EE*/"Abyss.Dng"
+    /*D_07EE*/"Abyss.Dng",
+    /*D_076D*/"B",
+    /*D_0772*/"Y",
+    /*D_0779*/"R",
+    /*D_077D*/"G",
+    /*D_0783*/"O",
+    /*D_078A*/"P",
+    /*D_0791*/"W",
+    /*D_0797*/"B",
+    /*Camps*/
+    /*0x2E 0x5D*/"RIVER1.ULT",
+    /*0x79 0x3A*/"FOREST1.ULT",
+    /*0x9A 0x41*/"MOUNT1.ULT",
+    /*0xD9 0x34*/"SWAMP1.ULT",
+    /*0x51 0xB7*/"PLAINS1.ULT",
+    /*0x30 0x9E*/"VALLEY1.ULT",
+    /*0x51 0xB7*/"FARM1.ULT",
+    /*0x30 0x9E*/"RANCH1.ULT",
+    /*D_07A8*/"MONDAIN.DNG",
+    /*D_07B4*/"MINAX.DNG",
+    /*D_07EE*/"EXODUS.DNG"
 };
 
 /*colors i.e. shrines*/
@@ -363,17 +383,4 @@ char *Shrines[] = {
 	/*D_0797*/"Black"
 };
 
-/*crypts files*/
-char *Crypts[] = {
-    /*D_07A8*/"MONDAIN.DNG",
-    /*D_07B4*/"MINAX.DNG",
-    /*D_07EE*/"EXODUS.DNG"
-};
-
-/*oracles. not used at moment...*/
-/*char *Oracles[] = {
-    "control",
-    "passion",
-    "diligence"
-};*/
 

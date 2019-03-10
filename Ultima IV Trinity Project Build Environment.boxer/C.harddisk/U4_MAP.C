@@ -360,7 +360,7 @@ unsigned char bp04;
 {
     /*-----------Added Code for Dragons!---------------*/
     if(Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4){
-        u4_puts("Descend First!\n");
+        u4_puts("Land First!\n");
     }
     else{
     /*-----------Added Code for Dragons!---------------*/

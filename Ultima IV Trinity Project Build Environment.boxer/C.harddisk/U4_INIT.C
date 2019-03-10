@@ -192,8 +192,8 @@ C_C51C()
 	DoublePace = 0;
     
     /*-----------Added Code for Dragons!------------------------*/
-    /*--Makes sure flying dragons are restored to doublepace----*/
-    if(Party.f_1dc == 1)
+    /*--Makes sure flying dragons (but not balloons) are restored to doublepace----*/
+    if(Party.f_1dc == 1 && Party._tile != TIL_18)
         DoublePace = 1;
     /*-----------Added Code for Dragons!------------------------*/
 

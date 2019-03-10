@@ -20,15 +20,9 @@ void cdecl /*C_191E*/main()
 	if((Party._loc >= 0x11 && Party._loc <= 0x18) || (Party._loc >= 0x29 && Party._loc <= 0x2B)) {
 		CurMode = MOD_DUNGEON;
         /*Party._loc made one bigger to make sure we catch the Abyss*/
-        if(Party._loc <= 0x19) {
             if(Load("DNGMAP.SAV", sizeof(tMap8x8x8), &(D_8742._map)) == -1)
 			exit(3);
             File_DNG = dopen(Dungeons[Party._loc - 0x11], 0);
-        } else {
-            if(Load("DNGMAP.SAV", sizeof(tMap8x8x8), &(D_8742._map)) == -1)
-                exit(3);
-            File_DNG = dopen(Crypts[Party._loc - 0x29], 0);
-        }
 		if(setjmp(D_9458) == 0)
 			DNG_main();
 	} else {

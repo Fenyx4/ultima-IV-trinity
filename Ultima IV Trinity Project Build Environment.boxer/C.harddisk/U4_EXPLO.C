@@ -126,65 +126,6 @@ char *Talk_Files_2[] ={
     /*D_07EE*/"T"
 };
 
-char *Talk_Files_B[] ={
-    /*Castles*/
-    /*D_1682*/"LCBB.TLK",
-    /*D_168A*/"LYCAEUMB.TLK",
-    /*D_1696*/"EMPATHB.TLK",
-    /*D_16A1*/"SERPENTB.TLK",
-    /*Townes*/
-    /*D_16AD*/"MOONGLOB.TLK",
-    /*D_16BA*/"BRITAINB.TLK",
-    /*D_16C6*/"JHELOMB.TLK",
-    /*D_16D1*/"YEWB.TLK",
-    /*D_16D9*/"MINOCB.TLK",
-    /*D_16E3*/"TRINSICB.TLK",
-    /*D_16EF*/"SKARAB.TLK",
-    /*D_16F9*/"MAGINCIB.TLK",
-    /*Villages*/
-    /*D_1706*/"PAWSB.TLK",
-    /*D_170F*/"DENB.TLK",
-    /*D_1717*/"VESPERB.TLK",
-    /*D_1722*/"COVEB.TLK",
-    /*Dungeons - added to give correct spacing when referencing new locatons*/
-    /*0xF0 0x49*/"D",
-    /*D_07A8*/"D",
-    /*D_07B4*/"D",
-    /*D_07C0*/"W",
-    /*D_07CA*/"C",
-    /*D_07D7*/"S",
-    /*D_07E1*/"H",
-    /*D_07EE*/"A",
-    /*Shrines*/
-    /*D_076D*/"B",
-    /*D_0772*/"Y",
-    /*D_0779*/"R",
-    /*D_077D*/"G",
-    /*D_0783*/"O",
-    /*D_078A*/"P",
-    /*D_0791*/"W",
-    /*D_0797*/"B",
-    /*Camps*/
-    /*D_16C6*/"RIVERB.TLK",
-    /*D_16D1*/"FORESTB.TLK",
-    /*D_16C6*/"MOUNTB.TLK",
-    /*D_16D1*/"SWAMPB.TLK",
-    /*D_16C6*/"PLAINSB.TLK",
-    /*D_16D1*/"VALLEYB.TLK",
-    /*D_16C6*/"FARMB.TLK",
-    /*D_16D1*/"RANCHB.TLK",
-    /*Crypts*/
-    /*D_07EE*/"M",
-    /*D_07EE*/"M",
-    /*D_07EE*/"E",
-    /*Oracle*/
-    /*D_07EE*/"L",
-    /*D_07EE*/"C",
-    /*D_07EE*/"T"
-};
-
-
-
 /*load casle/towne/village files*/
 Load_Towne(bp04)
 unsigned bp04;
@@ -195,7 +136,6 @@ unsigned bp04;
 		exit(3);
 	File_TLK = File_TLK_Buff = dopen(Talk_Files[Party._loc - 1], 0);
     File_TLK_2 = dopen(Talk_Files_2[Party._loc - 1], 0);
-    File_TLK_B = dopen(Talk_Files_B[Party._loc - 1], 0);
 	CurMode = MOD_BUILDING;
 }
 
@@ -212,17 +152,10 @@ unsigned bp04,bp02;
 EXP_Load_Dungeon()
 {
 	register int si;
-    char *dun_choi;
-    
-    /*made party._loc one bigger to ensure that Abyss is loaded correctly?*/
-    if(Party._loc <= 0x19) {
-        dun_choi = Dungeons[Party._loc - 0x11];
-    } else {
-        dun_choi = Crypts[Party._loc - 0x29];
-    }
-        if(Load(dun_choi, sizeof(tMap8x8x8), &(D_8742._map)) == -1)
+
+        if(Load(Dungeons[Party._loc - 0x11], sizeof(tMap8x8x8), &(D_8742._map)) == -1)
             exit(3);
-        File_DNG = dopen(dun_choi, 0);
+        File_DNG = dopen(Dungeons[Party._loc - 0x11], 0);
         for(si = 0x1f; si >= 0; si --)
             D_8742._npc._tile[si] = 0;
 }
@@ -244,13 +177,13 @@ Enter_Dungeon()
     
     /*-----------Modified Code for Dragons!---------------*/
     /*---Gives unique messages for Horse or Dragon mount--*/
-    if(Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4) {
+    /*if(Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4) {
         Party._loc = 0;
         w_No_Dragon();
         return;
-    }
+    }*/
     
-	if(Party._tile == TIL_HorseW_14 || Party._tile == TIL_HorseE_15) {
+	if((Party._tile == TIL_HorseW_14 || Party._tile == TIL_HorseE_15) || (Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4)) {
     /*-----------Modified Code for Dragons!---------------*/
         
 		Party._loc = 0;
@@ -710,19 +643,12 @@ CMD_Klimb()
     
 	if(Party._loc == 0) {
         
-        /*-----------Modified Code for Dragons!---------------*/
-		if(Party._tile != TIL_18 && (!(Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4))) {
-        /*-----------Modified Code for Dragons!---------------*/
+		if(Party._tile != TIL_18) {
             
 			w_What();
 			return;
 		}
 		u4_puts("altitude\n");
-        
-        /*-----------Modified Code for Dragons!---------------*/
-        /*-----------Modified Code for Dragons!---------------*/
-        DoublePace = 1;
-        /*-----------Modified Code for Dragons!---------------*/
         
 		Party.f_1dc = 1;
 		D_9440 = 0;
@@ -759,37 +685,19 @@ CMD_Descend()
         C_431D();
     u4_puts(/*D_1886*/"Descend ");
     
-    /*-----------Modified Code for Dragons!---------------*/
-    if(Party.f_1dc == 1){
+    if(Party._tile == TIL_18){
         
-        if(Party._tile == TIL_18) {
             u4_puts("Land Balloon\n");
             if(tile_cur != TIL_Grass_04) {
                 sound(1);
                 w_NotHere();
                 return;
             }
-        }
-        else if(Party._tile >= TIL_Dragon1 && Party._tile <= TIL_Dragon4) {
-            u4_puts("Land Dragon\n");
-            if(!(tile_cur >= TIL_Swamp_03 && tile_cur <= TIL_Mount_08)) {
-                sound(1);
-                w_NotHere();
-                return;
-            }
-        }
         
-    /*-----------Modified Code for Dragons!---------------*/
-            
 		if(Party.f_1dc == 0) {
 			u4_puts(/*D_1875*/"Already Landed!\n");
 			return;
 		}
-        
-        
-        /*-----------Modified Code for Dragons!---------------*/
-        DoublePace = 0;
-        /*-----------Modified Code for Dragons!---------------*/
         
 		Party.f_1dc = 0;
 		D_9440 = 1;

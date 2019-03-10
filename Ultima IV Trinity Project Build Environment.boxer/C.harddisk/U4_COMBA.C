@@ -118,7 +118,11 @@ C_61D1();*/
 					case KBD_T:
 					case KBD_W:
 					case KBD_X:
-					case KBD_Y: w_NotHere(); break;
+                        
+                        /*added for Words of Power */
+                    case KBD_Y: CMD_Yell(); break;/*w_NotHere(); break;*/
+                        /*added for Words of Power */
+
 					/*case KBD_CTRL_S:
 						if(bp_04 == KBD_ALT_Z) {
 							C_1C21();

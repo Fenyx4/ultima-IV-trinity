@@ -58,12 +58,12 @@ unsigned D_1654 = 0;
 /*update/display wind*/
 ANI_Wind()
 {
-/*	if(D_1654-- == 0) {
+if(D_1654-- == 0) {
 		D_1654 = speed_info - 1;
 		if(!U4_RND1(0xfc))
 			WindDir = (U4_RND1(2) + WindDir - 1) & 3;
 	}
-	C_353D(WindDir, "Wind");*/
+	C_353D(WindDir, "Wind");
 }
 
 unsigned D_1656[] = {192, 96, 60, 36, 20, 12, 8};
