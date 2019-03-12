@@ -19,6 +19,7 @@ mockup:
   * Hythloth bug fixed
   * Ship instant repair bug fixed
   * Camping at sea bug fixed
+  * Disappearing horse bug fixed
   * Other Small fixes
   
 ### New Features
